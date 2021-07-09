@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SBLibrary.Data.Models.Repository
 {
-    public class SBLInitializer : System.Data.Entity.CreateDatabaseIfNotExists<SBLibraryContext>
+    public class SBLInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<SBLibraryContext>
     {
         protected override void Seed(SBLibraryContext context)
         {
