@@ -23,7 +23,7 @@ namespace SBLibrary.Service.IService
 
         //delete
         //Book DelBook(int id);
-        //void DelBook(Book edit);
+        //void DelBook(Book del);
         //Book DelBook(Book del);
 
         //void AddMusic(UploadBook uploadBook, string UserID);

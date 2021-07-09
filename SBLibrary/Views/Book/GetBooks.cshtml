@@ -3,7 +3,7 @@
 @{ ViewBag.Title = "GetBooks";
    Layout = "~/Views/Shared/_BookLayout.cshtml"; 
 }
-<h2>GetBooks</h2>
+<h2>Book List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -29,9 +29,9 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BookID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
+                @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
+                @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
+                @Html.ActionLink("Delete", "DelBook", new { id = item.BookID })
             </td>
         </tr>
     }

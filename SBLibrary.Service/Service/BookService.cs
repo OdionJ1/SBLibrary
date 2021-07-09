@@ -69,14 +69,10 @@ namespace SBLibrary.Service.Service
         //    }
         //}
 
-        //public Book DelBook(Book id)
+        //public void DelBook(Book del)
         //{
-        //    using (var context = new SBLibraryContext())
-        //    {
-
-        //        return bookDAO.DelBook(id, context);
-        //    }
+        //    bookDAO.EditBook(del);
         //}
 
-}
+    }
 }

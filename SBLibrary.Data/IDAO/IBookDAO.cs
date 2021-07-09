@@ -18,8 +18,8 @@ namespace SBLibrary.Data.IDAO
         void EditBook(Book edit);
 
         //Delete
-        //Book DelBook(Book del, SBLibraryContext context);
-        //IList<Book> DelBooks(int id, SBLibraryContext context);
+        //Book DelBook(int id, SBLibraryContext context);
+        //void DelBooks(Book del, SBLibraryContext context);
 
 
         //IList<Book> DelBooks(int id, SBLibraryContext context);

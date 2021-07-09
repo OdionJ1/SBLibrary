@@ -59,13 +59,14 @@ namespace SBLibrary.Controllers
             return View();
         }
 
+        //[Authorize]
         //public ActionResult DelBook(int id)
         //{
 
         //    return View(bookService.DelBook(id));
         //}
 
-
+        //[Authorize]
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public ActionResult DelBook(Book del)

@@ -19,37 +19,25 @@ namespace SBLibrary.Data.DAO
 
         //public Book DelBook(int id, SBLibraryContext context)
         //{
-        //    var det = context.Books.Where(s => s.BookID == id).FirstOrDefault();
+        //    var del = context.Books.Where(s => s.BookID == id).FirstOrDefault();
 
-        //    return (det);
+        //    return (del);
         //}
 
-        //public IList<Book> DelBooks(int id, SBLibraryContext context)
+        //public void DelBooks(Book del, SBLibraryContext context)
         //{
-        //    return context.Books.OrderBy(s => s.BookID).ToList();
-        //}
-
-        //public Book DelBook(int id)
-        //{
+        //    try
         //    {
-        //        try
-        //        {
-        //            context.Books.Remove(del);
-        //            context.SaveChanges();
-        //        }
-        //        catch
-        //        {
-        //            throw;
-        //        }
+        //        context.Books.Remove(del);
+        //        context.SaveChanges();
+        //    }
+        //    catch
+        //    {
+        //        throw;
         //    }
         //}
 
-        //public Book DelBook(int id, SBLibraryContext context)
-        //{
-        //    var dl = context.Books.Where(s => s.BookID == id).FirstOrDefault();
-
-        //    return (dl);
-        //}
+       
 
         public Book EditBook(int id, SBLibraryContext context)
         {
