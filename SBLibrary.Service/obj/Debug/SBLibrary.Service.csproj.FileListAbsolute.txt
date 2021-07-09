@@ -1,0 +1,54 @@
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\Excel Felix\source\repos\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\Excel Felix\source\repos\SBLibrary - Copy (2) - Copy\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Excel Felix\source\SDDPro\SBlibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\odion\Desktop\SBlibrary-dev\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
