@@ -99,8 +99,6 @@ namespace SBLibrary.Controllers
                 return View();
             }
         }
-        
-
         public ActionResult Login()
         {
             return View();
@@ -142,9 +140,6 @@ namespace SBLibrary.Controllers
                 //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
                 return RedirectToAction("Login");
             }
-
-
-
             return View();
         }
 
