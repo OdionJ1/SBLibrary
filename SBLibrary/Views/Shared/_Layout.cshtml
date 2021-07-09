@@ -16,13 +16,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <ul class="navbar-brand">Sky Book Library</ul>
-                @*@Html.ActionLink("Sky Book Library", "", "", new { area = "" }, new { @class = "navbar-brand" })*@
+                @Html.ActionLink("Sky Book Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("BookList", "GetBooks", "Book")</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    } else
+                    {
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
                 </ul>
             </div>
         </div>

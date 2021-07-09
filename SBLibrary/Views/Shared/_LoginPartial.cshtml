@@ -1,15 +1,14 @@
-﻿@if (Session["Email"] != null)
+﻿@if (User.Identity.IsAuthenticated)
 {
     <ul class="nav navbar-nav navbar-right">
 
         <li>@Html.ActionLink("Log Out", "LogOut", "Account", routeValues: null, htmlAttributes: new { id = "??" })</li>
     </ul>
-        <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
         <li>
-                <ul class="navbar-brand">@Session["Email"]</ul>
+            <ul class="navbar-brand">@User.Identity.Name</ul>
         </li>
     </ul>
-
 }
 else
 {

@@ -28,18 +28,24 @@ namespace SBLibrary.Controllers
         //{
         //    return View(bookService.GetBooks(id));
         //}
+
+        //Only a registered user will access the method
+        [Authorize]
         public ActionResult GetBooks()
         {
             return View(bookService.GetBooks());
         }
 
+        //Only a registered user will access the method
+        [Authorize]
         public ActionResult EditBook(int id)
         {
             
             return View(bookService.EditBook(id));
         }
 
-
+        //Only a registered user will access the method
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditBook(Book edit)

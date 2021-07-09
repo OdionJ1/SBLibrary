@@ -110,18 +110,18 @@ namespace SBLibrary.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Login loginmodel)
         {
-            if (ModelState.IsValid)
+            var user = loginService.UserAuthenticated(loginmodel);
+            Session["userId"] = user.UserID;
+            if (user != null)
             {
-                var user = userService.GetUser(loginmodel.Email);
-                if (loginService.UserAuthenticated(loginmodel)) 
-                {
-                    Session["Email"] = loginmodel.Email;
-                    return RedirectToAction("GetBooks", "Book", new { id = user.UserID }); 
-                }
-                
-                return RedirectToAction("Login");
+                var Ticket = new FormsAuthenticationTicket(loginmodel.Email, true, 3000);
+                string Encrypt = FormsAuthentication.Encrypt(Ticket);
+                var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, Encrypt);
+                cookie.Expires = DateTime.Now.AddHours(3000);
+                cookie.HttpOnly = true;
+                Response.Cookies.Add(cookie);
+                return RedirectToAction("GetBooks", "Book", new { id = user.UserID });
             }
-
             return View();
         }
 
