@@ -29,5 +29,6 @@ namespace SBLibrary.Data.Models.Repository
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
+        public System.Data.Entity.DbSet<SBLibrary.Data.Models.Domain.ResetPassword> ResetPasswords { get; set; }
     }
 }

@@ -13,5 +13,6 @@ namespace SBLibrary.Service.IService
         void CreateUser(User user);
 
         User GetUser(string email);
+        void ResetPassword(ResetPassword resetmodel);
     }
 }

@@ -55,5 +55,24 @@ namespace SBLibrary.Data.DAO
         {
             context.Users.ToList().Find(x => x.UserID == UserID).Books.Add(book);
         }
+
+        public void ResetPassword(ResetPassword resetmodel)
+        {
+
+            User currectUser = GetUser(resetmodel.EmailID);
+
+            currectUser.Password = resetmodel.NewPassword;
+
+            //var user = db.Users.Add(new User {UserID= currectUser.UserID, Email= currectUser.Email, Password= currectUser.Password,
+            //FirstName=currectUser.FirstName, LastName= currectUser.LastName, Mobile= currectUser.Mobile
+            //});
+            context.SaveChanges();
+
+            context.Entry(currectUser).CurrentValues.SetValues(resetmodel);
+
+            Console.WriteLine("done ... ");
+
+
+        }
     }
 }

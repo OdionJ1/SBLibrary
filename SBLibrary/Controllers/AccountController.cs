@@ -149,6 +149,29 @@ namespace SBLibrary.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ResetPassword(ResetPassword resetmodel)
+        {
+            if (ModelState.IsValid)
+            {
+                //int userId =  (int) Session["userId"];
+                //int userId = 0;
+
+               userService.ResetPassword(resetmodel);
+
+
+            }
+
+            ViewBag.SuccessMessage = "The New Password is updated.";
+            return RedirectToAction("Login", "Account");
+
+        }
+
         public ActionResult GetBook(int id)
         {
             return View(bookService.GetBook(id));

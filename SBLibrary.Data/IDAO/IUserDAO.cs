@@ -17,5 +17,6 @@ namespace SBLibrary.Data.IDAO
         User GetUser(string email);
 
         void AddBookToCollection(Book book, int UserID, SBLibraryContext context);
+        void ResetPassword(ResetPassword resetmodel);
     }
 }

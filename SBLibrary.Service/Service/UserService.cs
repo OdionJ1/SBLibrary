@@ -32,5 +32,11 @@ namespace SBLibrary.Service.Service
         {
             return userDAO.GetUser(email);
         }
+        public void ResetPassword(ResetPassword resetmodel)
+        {
+            userDAO.ResetPassword(resetmodel);
+
+
+        }
     }
 }

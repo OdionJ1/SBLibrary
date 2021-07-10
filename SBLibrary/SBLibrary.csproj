@@ -184,6 +184,7 @@
     <Content Include="Views\Account\GetBook.cshtml" />
     <Content Include="Views\Book\EditBook.cshtml" />
     <Content Include="Views\Book\DelBook.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

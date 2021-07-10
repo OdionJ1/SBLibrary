@@ -82,3 +82,18 @@ C:\Users\Excel Felix\source\SDDPrts\SBLibrary\SBLibrary.Service\obj\Debug\SBLibr
 C:\Users\Excel Felix\source\SDDPrts\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
 C:\Users\Excel Felix\source\SDDPrts\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
 C:\Users\Excel Felix\source\SDDPrts\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\Sathya\ResetPassword\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
