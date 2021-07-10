@@ -9,12 +9,11 @@ namespace SBLibrary.Data.Models.Domain
 {
     public class Author
     {
-       [Key]
-       [Display(Name = "Author Name")]
+        [Key]
+        [Display(Name = "Author Name")]
         public string AuthorName { get; set; }
         // Foreign key to User
         public virtual User User { get; set; }
-        public virtual ICollection<Book> Books { get; set; }
 
     }
 }

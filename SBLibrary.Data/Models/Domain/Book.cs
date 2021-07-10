@@ -14,5 +14,7 @@ namespace SBLibrary.Data.Models.Domain
         public virtual User User { get; set; }
         public string Title { get; set; }
         public System.DateTime Date { get; set; }
+        public Author Author { get; set; }
+        public Category Category { get; set; }
     }
 }

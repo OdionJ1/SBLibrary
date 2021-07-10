@@ -14,6 +14,5 @@ namespace SBLibrary.Data.Models.Domain
         public string CategoryName { get; set; }
         // Foreign key to User
         public virtual User User { get; set; }
-        public virtual ICollection<Book> Books { get; set; }
     }
 }
