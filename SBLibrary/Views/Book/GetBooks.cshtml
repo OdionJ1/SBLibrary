@@ -5,9 +5,21 @@
 }
 <h2>Book List</h2>
 
-<p>
+<p class="navbar-right"><b>
     @Html.ActionLink("Add Book", "Create")
+</b></p><br />
+
+<p>
+    @*generate a form tag using a get request, so for that we need
+        begainform tag, to get an open and close form use using (Html.*@
+    @using (Html.BeginForm())
+    {
+    <b>Search By:</b> @Html.RadioButton("searchBy", "Title") <text>Title</text>
+    @Html.RadioButton("searchBy", "Author") <text>Author</text><br />
+    @Html.TextBox("Search") <input type="submit" value="Search" />
+    }
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -16,7 +28,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
 
     @foreach (var item in Model)
