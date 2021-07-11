@@ -15,14 +15,12 @@ namespace SBLibrary.Data.IDAO
         IList<Book> GetBooks(int id, SBLibraryContext context);
 
         Book EditBook(int id, SBLibraryContext context);
-        void EditBook(Book edit);
+        int EditBook(Book book);
 
         //Delete
         //Book DelBook(int id, SBLibraryContext context);
-        //void DelBooks(Book del, SBLibraryContext context);
+        void DelBook(int id, SBLibraryContext context);
 
-
-        //IList<Book> DelBooks(int id, SBLibraryContext context);
 
         //void AddBook(Book book, SBLibraryContext context);
         //void AddBook(Book book,  Author author, SBLibraryContext context);

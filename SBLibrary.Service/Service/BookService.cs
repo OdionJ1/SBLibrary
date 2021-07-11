@@ -45,18 +45,19 @@ namespace SBLibrary.Service.Service
             }
         }
         //edit book
+
         public Book EditBook(int id)
         {
             using (var context = new SBLibraryContext())
             {
-               
+
                 return bookDAO.EditBook(id, context);
             }
         }
 
-        public void EditBook(Book edit)
+        public int EditBook(Book book)
         {
-            bookDAO.EditBook(edit);
+            return bookDAO.EditBook(book);
         }
 
         //del book
@@ -69,10 +70,14 @@ namespace SBLibrary.Service.Service
         //    }
         //}
 
-        //public void DelBook(Book del)
-        //{
-        //    bookDAO.EditBook(del);
-        //}
+        public void DelBook(int id)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                bookDAO.DelBook(id, context);
+
+            }
+        }
 
     }
 }

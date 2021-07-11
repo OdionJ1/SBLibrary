@@ -19,12 +19,11 @@ namespace SBLibrary.Service.IService
         //edit book
         Book EditBook(int id);
 
-        void EditBook(Book edit);
+        int EditBook(Book book);
 
         //delete
         //Book DelBook(int id);
-        //void DelBook(Book del);
-        //Book DelBook(Book del);
+        void DelBook(int id);
 
         //void AddMusic(UploadBook uploadBook, string UserID);
     }

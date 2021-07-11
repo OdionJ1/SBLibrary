@@ -3,6 +3,7 @@ using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,27 +18,24 @@ namespace SBLibrary.Data.DAO
             context = new SBLibraryContext();
         }
 
-        //public Book DelBook(int id, SBLibraryContext context)
-        //{
-        //    var del = context.Books.Where(s => s.BookID == id).FirstOrDefault();
 
-        //    return (del);
-        //}
+        public void DelBook(int id, SBLibraryContext context)
+        {
+            try
+            {
+                Book book = context.Books.Find(id);
+                context.Books.Remove(book);
+                context.SaveChanges();
 
-        //public void DelBooks(Book del, SBLibraryContext context)
-        //{
-        //    try
-        //    {
-        //        context.Books.Remove(del);
-        //        context.SaveChanges();
-        //    }
-        //    catch
-        //    {
-        //        throw;
-        //    }
-        //}
+            }
+            catch
+            {
+                throw;
+            }
 
-       
+        }
+
+
 
         public Book EditBook(int id, SBLibraryContext context)
         {
@@ -46,20 +44,23 @@ namespace SBLibrary.Data.DAO
             return (eit);
         }
 
-        public void EditBook(Book edit)
+        public int EditBook(Book book)
         {
+            try
             {
-                try
-                {
-                    context.Books.Add(edit);
-                    context.SaveChanges();
-                }
-                catch
-                {
-                    throw;
-                }
+                context.Entry(book).State = EntityState.Modified;  //use user.data.entity for enter
+                context.SaveChanges();
+
+                return 1;
+            }
+            catch
+            {
+                throw;
             }
         }
+
+
+
 
         //Get book in a list with specific id - implement details
         public Book GetBook(int id, SBLibraryContext context)
@@ -76,14 +77,10 @@ namespace SBLibrary.Data.DAO
         //Get books in a list with thier id - implement details
         public IList<Book> GetBooks(int id, SBLibraryContext context)
         {
-            var res = context.Books.ToList();
+            var res = context.Books.ToList().FindAll(y => y.User.UserID == id);
             return res;
         }
-        //public Book GetBook(int UserID, SBLibraryContext context)
-        //{
-        //    var res = context.Books.ToList().Find(y => y.UserID == UserID);
-        //    return (res);
-        //}
+
 
         //public void AddBook(Book book, SBLibraryContext context)
         //{

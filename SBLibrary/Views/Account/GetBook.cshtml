@@ -31,5 +31,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "EditBook", new { id = Model.BookID, controller = "Book" }) |
-    @Html.ActionLink("Back to List", "GetBooks", new { id = Model.BookID, controller = "Book" }))
+    @Html.ActionLink("Delete", "DelBook", new { id = Model.BookID, controller = "Book" }) |
+    @Html.ActionLink("Back to List", "GetBooks", new { id = Model.BookID, controller = "Book" })
 </p>

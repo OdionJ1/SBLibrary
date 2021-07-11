@@ -19,28 +19,18 @@ namespace SBLibrary.Controllers
             bookService = new BookService();
         }
 
-        //get book info with id
-        //public ActionResult GetBook(int id)
-        //{
-        //    return View(bookService.GetBook(id));
-        //}
-        //public ActionResult GetBooks(int id)
-        //{
-        //    return View(bookService.GetBooks(id));
-        //}
-
-        //Only a registered user will access the method
         [Authorize]
         public ActionResult GetBooks()
         {
-            return View(bookService.GetBooks());
+            var userId = (int)Session["userId"];
+            return View(bookService.GetBooks(userId));
         }
 
         //Only a registered user will access the method
         [Authorize]
         public ActionResult EditBook(int id)
         {
-            
+
             return View(bookService.EditBook(id));
         }
 
@@ -63,22 +53,22 @@ namespace SBLibrary.Controllers
         //public ActionResult DelBook(int id)
         //{
 
-        //    return View(bookService.DelBook(id));
-        //}
-
-        //[Authorize]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DelBook(Book del)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        bookService.DelBook(del);
-        //        //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
-        //        return RedirectToAction("GetBooks");
-        //    }
         //    return View();
         //}
+
+        [Authorize]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult DelBook(int id)
+        {
+            if (id > 0)
+            {
+                bookService.DelBook(id);
+                //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
+                return RedirectToAction("GetBooks");
+            }
+            return View();
+        }
 
 
 
