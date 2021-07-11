@@ -4,7 +4,7 @@
     ViewBag.Title = "DelBook";
 }
 
-<h2>DelBook</h2>
+<h2>Delete Book</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -32,9 +32,10 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+    @*<input type="submit" value="Delete" class="btn btn-default" /> |*@
+    @Html.ActionLink("Delete", "DelBook", new { id = Model.BookID }, new { @class = "btn btn-default" } )
+    @Html.ActionLink("Back to List", "GetBooks")
+</div>
     }
 </div>

@@ -56,6 +56,18 @@ namespace SBLibrary.Controllers
         //    return View();
         //}
 
+        public ActionResult ConfirmDel(int id)
+        {
+            //if (id > 0)
+            //{
+            //    bookService.DelBook(id);
+            //    //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
+            //    return RedirectToAction("GetBooks");
+            //}
+            return View("DelBook", bookService.GetBook(id));
+        }
+
+
         [Authorize]
         //[HttpPost]
         //[ValidateAntiForgeryToken]

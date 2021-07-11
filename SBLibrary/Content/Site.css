@@ -9,6 +9,13 @@
     padding-right: 15px;
 }
 
+/*.navbar-inverse {
+    background-color: #884211 !important;
+}
+
+.navbar {
+    background-color: #39870C;
+} */
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -21,4 +28,13 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.navbar-inverse {
+    background-color: #1f052a;
+    border-color: #af5b1e;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
 }

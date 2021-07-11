@@ -43,7 +43,8 @@
             <td>
                 @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
                 @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
-                @Html.ActionLink("Delete", "DelBook", new { id = item.BookID })
+                @*@Html.ActionLink("Delete", "DelBook", new { id = item.BookID })*@
+                @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID })
             </td>
         </tr>
     }
