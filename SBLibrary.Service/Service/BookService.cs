@@ -60,16 +60,6 @@ namespace SBLibrary.Service.Service
             return bookDAO.EditBook(book);
         }
 
-        //del book
-        //public Book DelBook(int id)
-        //{
-        //    using (var context = new SBLibraryContext())
-        //    {
-
-        //        return bookDAO.DelBook(id, context);
-        //    }
-        //}
-
         public void DelBook(int id)
         {
             using (var context = new SBLibraryContext())
@@ -79,5 +69,12 @@ namespace SBLibrary.Service.Service
             }
         }
 
+        public IList<Book> Search(string searchBy, string search)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return bookDAO.Search(searchBy, search, context);
+            }
+        }
     }
 }

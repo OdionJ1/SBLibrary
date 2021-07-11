@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Book>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Results</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditBook", new { id=item.BookID }) |
+            @Html.ActionLink("Details", "GetBook", new { id=item.BookID, controller = "Account" }) |
+            @Html.ActionLink("Delete", "DelBook", new { id=item.BookID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "GetBooks")
+</div>

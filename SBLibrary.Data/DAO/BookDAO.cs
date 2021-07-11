@@ -81,6 +81,23 @@ namespace SBLibrary.Data.DAO
             return res;
         }
 
+        //Serch implimentation 
+        public IList<Book> Search(string searchBy, string search, SBLibraryContext context)
+        {
+            if (searchBy == "Title")
+            {
+                var srch = context.Books.Where(x => x.Title.StartsWith(search) || search == null).ToList();
+                return srch;
+            }
+            else
+            {
+                var srch = context.Books.Where(x => x.Author.AuthorName.StartsWith(search)).ToList();
+                return srch;
+            }
+        }
+
+
+
 
         //public void AddBook(Book book, SBLibraryContext context)
         //{

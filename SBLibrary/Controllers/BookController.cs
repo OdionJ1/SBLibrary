@@ -70,6 +70,12 @@ namespace SBLibrary.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult Search(string searchBy, string search)
+        {
+            return View(bookService.Search(searchBy, search));
+        }
+
 
 
 

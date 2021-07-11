@@ -21,6 +21,8 @@ namespace SBLibrary.Data.IDAO
         //Book DelBook(int id, SBLibraryContext context);
         void DelBook(int id, SBLibraryContext context);
 
+        IList<Book> Search(string searchBy, string search, SBLibraryContext context);
+
 
         //void AddBook(Book book, SBLibraryContext context);
         //void AddBook(Book book,  Author author, SBLibraryContext context);

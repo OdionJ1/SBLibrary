@@ -112,10 +112,10 @@ namespace SBLibrary.Controllers
             Session["userId"] = user.UserID;
             if (user != null)
             {
-                var Ticket = new FormsAuthenticationTicket(loginmodel.Email, true, 3000);
+                var Ticket = new FormsAuthenticationTicket(loginmodel.Email, true, 100);
                 string Encrypt = FormsAuthentication.Encrypt(Ticket);
                 var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, Encrypt);
-                cookie.Expires = DateTime.Now.AddHours(3000);
+                cookie.Expires = DateTime.Now.AddHours(100);
                 cookie.HttpOnly = true;
                 Response.Cookies.Add(cookie);
                 return RedirectToAction("GetBooks", "Book", new { id = user.UserID });
