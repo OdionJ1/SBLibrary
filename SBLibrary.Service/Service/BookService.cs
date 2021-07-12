@@ -19,6 +19,30 @@ namespace SBLibrary.Service.Service
             bookDAO = new BookDAO();
         }
 
+        //Check if the book is already on the list
+        public static bool exist(int bookId, int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                var favBook = context.Favorites.ToList().Find(y => y.Book.BookID == bookId && y.User.UserID == userId);
+                if (favBook != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public void AddToFavList(int bookId, int userId)
+        {
+            if (!exist(bookId, userId))
+            {
+                using (var context = new SBLibraryContext())
+                {
+                    bookDAO.AddToFavList(bookId, userId, context);
+                }
+            }
+        }
         public IList<Book> GetFavouriteBooks(int userId)
         {
             using (var context = new SBLibraryContext())

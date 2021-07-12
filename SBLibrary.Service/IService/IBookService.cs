@@ -22,6 +22,8 @@ namespace SBLibrary.Service.IService
 
         int EditBook(Book book);
 
+        void AddToFavList(int bookId, int userId);
+
         //delete
         //Book DelBook(int id);
         void DelBook(int id);

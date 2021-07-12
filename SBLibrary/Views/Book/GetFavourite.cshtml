@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BookID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BookID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BookID })
+            @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
+            @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
+            @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID })
         </td>
     </tr>
 }

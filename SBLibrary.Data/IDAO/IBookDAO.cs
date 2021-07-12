@@ -18,6 +18,8 @@ namespace SBLibrary.Data.IDAO
         Book EditBook(int id, SBLibraryContext context);
         int EditBook(Book book);
 
+        void AddToFavList(int bookId, int userId, SBLibraryContext context);
+
         //Delete
         //Book DelBook(int id, SBLibraryContext context);
         void DelBook(int id, SBLibraryContext context);
