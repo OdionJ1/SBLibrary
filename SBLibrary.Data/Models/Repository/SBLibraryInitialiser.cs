@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SBLibrary.Data.Models.Repository
 {
-    public class SBLInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<SBLibraryContext>
+    public class SBLInitializer : System.Data.Entity.DropCreateDatabaseAlways<SBLibraryContext>
     {
         protected override void Seed(SBLibraryContext context)
         {
@@ -21,12 +21,16 @@ namespace SBLibrary.Data.Models.Repository
 
             var books = new List<Book>
             {
-                new Book() { Title = "Are you afraid of the Dark", Date = Convert.ToDateTime("12/12/2020") },   
+                new Book() { Title = "Are you afraid of the Dark", Date = Convert.ToDateTime("12/12/2020") },
                 new Book() { Title = "Lenny the Lobster Can't Stay for Dinner", Date = Convert.ToDateTime("12/12/2020") },
                 new Book() { Title = "The Boy Who Steals Houses Paperback", Date = Convert.ToDateTime("12/12/2020") },
              };
-            
-            books.ForEach(s => context.Books.Add(s));
+
+            books.ForEach(s => {
+                s.User = users[0];
+                context.Books.Add(s);
+            }
+            );
             context.SaveChanges();
 
             var authors = new List<Author>
