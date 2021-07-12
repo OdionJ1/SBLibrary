@@ -25,7 +25,7 @@ namespace SBLibrary.Data.Models.Repository
                 new Book() { Title = "Lenny the Lobster Can't Stay for Dinner", Date = Convert.ToDateTime("12/12/2020") },
                 new Book() { Title = "The Boy Who Steals Houses Paperback", Date = Convert.ToDateTime("12/12/2020") },
              };
-
+            
             books.ForEach(s => context.Books.Add(s));
             context.SaveChanges();
 

@@ -101,8 +101,8 @@ C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.dll
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.xml
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.AssemblyReference.cache
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CoreCompileInputs.cache
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CopyComplete
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.dll
 C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.pdb
+C:\Users\Sathya\1207\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.AssemblyReference.cache
