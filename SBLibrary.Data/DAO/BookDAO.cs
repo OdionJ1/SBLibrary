@@ -18,6 +18,39 @@ namespace SBLibrary.Data.DAO
             context = new SBLibraryContext();
         }
 
+        //Check if the book is already on the list
+        public bool exist(int bookId, int userId, SBLibraryContext context)
+        {
+            var favBook = context.Favorites.ToList().Find(y => y.Book.BookID == bookId && y.User.UserID == userId);
+            if(favBook != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //Add book to favourite list
+        public void AddToFavList(int bookId, int userId, SBLibraryContext context)
+        {
+            if (!exist(bookId, userId, context))
+            {
+                Book book = GetBook(bookId, context);
+                User user = context.Users.ToList().Find(y => y.UserID == userId);
+                Favorite fav = new Favorite()
+                {
+                    Book = book,
+                    User = user,
+                };
+                context.Favorites.Add(fav);
+                context.SaveChanges();
+            }
+        }
+
+        private User GetUser(int userId, SBLibraryContext context)
+        {
+            throw new NotImplementedException();
+        }
+
         public IList<Book> GetFavouriteBooks(int userId, SBLibraryContext context)
         {
             bool find(Book book)
@@ -72,9 +105,6 @@ namespace SBLibrary.Data.DAO
                 throw;
             }
         }
-
-
-
 
         //Get book in a list with specific id - implement details
         public Book GetBook(int id, SBLibraryContext context)
