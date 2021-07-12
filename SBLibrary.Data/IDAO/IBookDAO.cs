@@ -11,6 +11,7 @@ namespace SBLibrary.Data.IDAO
     public interface IBookDAO
     {
         IList<Book> GetBooks(SBLibraryContext context);
+        IList<Book> GetFavouriteBooks(int userId, SBLibraryContext context);
         Book GetBook(int id, SBLibraryContext context);
         IList<Book> GetBooks(int id, SBLibraryContext context);
 

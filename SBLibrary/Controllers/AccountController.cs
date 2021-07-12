@@ -109,7 +109,7 @@ namespace SBLibrary.Controllers
         public ActionResult Login(Login loginmodel)
         {
             var user = loginService.UserAuthenticated(loginmodel);
-            Session["userId"] = user.UserID;
+            //Session["userId"] = user.UserID;
             if (user != null)
             {
                 var Ticket = new FormsAuthenticationTicket(loginmodel.Email, true, 100);

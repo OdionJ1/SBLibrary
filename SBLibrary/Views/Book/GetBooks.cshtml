@@ -1,22 +1,25 @@
 ﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Book>
 
 @{ ViewBag.Title = "GetBooks";
-   Layout = "~/Views/Shared/_BookLayout.cshtml"; 
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
 }
 <h2>Book List</h2>
 
-<p class="navbar-right"><b>
-    @Html.ActionLink("Add Book", "Create")
-</b></p><br />
+<p class="navbar-right">
+    <b>
+        @Html.ActionLink("Add Book", "Create")
+    </b>
+</p>
+<br />
 
 <p>
     @*generate a form tag using a get request, so for that we need
         begainform tag, to get an open and close form use using (Html.*@
     @using (Html.BeginForm("Search", "Book", FormMethod.Get))
     {
-    <b>Search By:</b> @Html.RadioButton("searchBy", "Title", true) <text>Title</text>
-    @Html.RadioButton("searchBy", "AuthorName") <text>Author</text><br />
-    @Html.TextBox("Search") <input type="submit" value="Search" />
+        <b>Search By:</b> @Html.RadioButton("searchBy", "Title", true) <text>Title</text>
+        @Html.RadioButton("searchBy", "AuthorName") <text>Author</text><br />
+        @Html.TextBox("Search") <input type="submit" value="Search" />
     }
 </p>
 

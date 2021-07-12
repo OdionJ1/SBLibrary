@@ -18,7 +18,23 @@ namespace SBLibrary.Data.DAO
             context = new SBLibraryContext();
         }
 
-
+        public IList<Book> GetFavouriteBooks(int userId, SBLibraryContext context)
+        {
+            bool find(Book book)
+            {
+                IList<Favorite> fav = context.Favorites.ToList();
+                for (int i = 0; i < fav.Count(); i++)
+                {
+                    if (book.BookID == fav[i].Book.BookID && fav[i].User.UserID == userId)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            var res = context.Books.ToList().FindAll(y => find(y));
+            return res;
+        }
         public void DelBook(int id, SBLibraryContext context)
         {
             try
@@ -34,8 +50,6 @@ namespace SBLibrary.Data.DAO
             }
 
         }
-
-
 
         public Book EditBook(int id, SBLibraryContext context)
         {

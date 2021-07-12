@@ -11,6 +11,8 @@ namespace SBLibrary.Data.Models.Domain
     {
         [Key]
         public int FavoriteListID { get; set; }
+
+        public virtual User User { get; set; }
         public virtual Book Book { get; set; }
     }
 }

@@ -19,6 +19,14 @@ namespace SBLibrary.Service.Service
             bookDAO = new BookDAO();
         }
 
+        public IList<Book> GetFavouriteBooks(int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return bookDAO.GetFavouriteBooks(userId, context);
+            }
+        }
+
         //impliment get book interface for details
         public Book GetBook(int id)
         {

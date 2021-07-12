@@ -10,6 +10,7 @@ namespace SBLibrary.Service.IService
 {
     public interface IBookService
     {
+        IList<Book> GetFavouriteBooks(int userId);
         IList<Book> GetBooks();
 
         //book service interface to get books

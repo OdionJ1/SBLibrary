@@ -13,15 +13,29 @@ namespace SBLibrary.Controllers
     public class BookController : Controller
     {
         IBookService bookService;
+        IUserService userService;
 
         public BookController()
         {
+            userService = new UserService();
             bookService = new BookService();
+        }
+
+        [Authorize]
+        public ActionResult GetFavourite()
+        {
+            int userId = (int)Session["userId"];
+            return View(bookService.GetFavouriteBooks(userId));
         }
 
         [Authorize]
         public ActionResult GetBooks()
         {
+            var user = userService.GetUser(User.Identity.Name);
+            if(user != null)
+            {
+                Session["userId"] = user.UserID;
+            }
             var userId = (int)Session["userId"];
             return View(bookService.GetBooks(userId));
         }
@@ -87,14 +101,6 @@ namespace SBLibrary.Controllers
         {
             return View(bookService.Search(searchBy, search));
         }
-
-
-
-
-
-
-
-
 
         // GET: Book
         public ActionResult Index()
