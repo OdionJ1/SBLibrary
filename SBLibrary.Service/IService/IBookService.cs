@@ -35,6 +35,7 @@ namespace SBLibrary.Service.IService
 
         IList<Book> Search(string searchBy, string search);
 
+        void AddBook(UploadBook uploadBook, int UserId);
         //void AddMusic(UploadBook uploadBook, string UserID);
     }
 }

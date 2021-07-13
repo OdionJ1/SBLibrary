@@ -15,6 +15,7 @@ namespace SBLibrary.Controllers
     {
         IBookService bookService;
         IUserService userService;
+        Helper helper = new Helper();
 
         public BookController()
         {
@@ -150,9 +151,12 @@ namespace SBLibrary.Controllers
             return View();
         }
 
+        
         // GET: Book/Create
-        public ActionResult Create()
+        public ActionResult AddBook()
         {
+            ViewBag.categoryList = helper.GetCategoryDropDown((int)Session["userId"]);
+            ViewBag.authorList = helper.GetAuthorDropDown((int)Session["userId"]);
             return View();
         }
 

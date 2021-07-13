@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Author>
+
+@{
+    ViewBag.Title = "GetAuthors";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>Authors</h2>
+
+<p>
+    @Html.ActionLink("Add Author", "AddAuthor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorName)
+        </td>
+        <td>
+            @Html.ActionLink("Delete Author", "Delete", new { id = item.AuthorName }, new { @style = "color: indianred" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -34,6 +34,7 @@ namespace SBLibrary.Data.IDAO
 
         IList<Book> Search(string searchBy, string search, SBLibraryContext context);
 
+        void AddBook(Book book, SBLibraryContext context);
 
         //void AddBook(Book book, SBLibraryContext context);
         //void AddBook(Book book,  Author author, SBLibraryContext context);

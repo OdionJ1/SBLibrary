@@ -30,5 +30,7 @@ namespace SBLibrary.Data.Models.Repository
         }
 
         public System.Data.Entity.DbSet<SBLibrary.Data.Models.Domain.ResetPassword> ResetPasswords { get; set; }
+
+        //public System.Data.Entity.DbSet<SBLibrary.Service.Models.UploadBook> UploadBooks { get; set; }
     }
 }

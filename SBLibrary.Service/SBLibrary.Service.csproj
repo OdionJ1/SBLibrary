@@ -51,11 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IService\IAuthorService.cs" />
     <Compile Include="IService\IBookService.cs" />
+    <Compile Include="IService\ICategoryService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Models\UploadBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AuthorService.cs" />
     <Compile Include="Service\BookService.cs" />
+    <Compile Include="Service\CategoryService.cs" />
     <Compile Include="Service\LoginService.cs" />
     <Compile Include="Service\UserService.cs" />
   </ItemGroup>

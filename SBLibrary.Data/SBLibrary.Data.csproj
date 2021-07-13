@@ -51,9 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AuthorDAO.cs" />
     <Compile Include="DAO\BookDAO.cs" />
+    <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="IDAO\IAuthorDAO.cs" />
     <Compile Include="IDAO\IBookDAO.cs" />
+    <Compile Include="IDAO\ICategoryDAO.cs" />
     <Compile Include="IDAO\IUserDAO.cs" />
     <Compile Include="Models\Domain\Author.cs" />
     <Compile Include="Models\Domain\Book.cs" />

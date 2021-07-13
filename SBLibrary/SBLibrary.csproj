@@ -133,7 +133,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\Helper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -192,6 +195,11 @@
     <Content Include="Views\Book\GetFavourite.cshtml" />
     <Content Include="Views\Book\UploadBook.cshtml" />
     <Content Include="Views\Book\GetReadList.cshtml" />
+    <Content Include="Views\Book\AddBook.cshtml" />
+    <Content Include="Views\Category\AddCategory.cshtml" />
+    <Content Include="Views\Author\AddAuthor.cshtml" />
+    <Content Include="Views\Author\GetAuthors.cshtml" />
+    <Content Include="Views\Category\GetCategories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -142,3 +142,33 @@ C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.c
 C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
 C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
 C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete

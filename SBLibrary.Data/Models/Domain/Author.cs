@@ -11,6 +11,7 @@ namespace SBLibrary.Data.Models.Domain
     {
         [Key]
         [Display(Name = "Author Name")]
+        [Required(ErrorMessage = "Enter the Author name")]
         public string AuthorName { get; set; }
         // Foreign key to User
         public virtual User User { get; set; }

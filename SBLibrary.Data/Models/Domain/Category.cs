@@ -11,6 +11,7 @@ namespace SBLibrary.Data.Models.Domain
     {
         [Key]
         [Display(Name = "Category Name")]
+        [Required(ErrorMessage = "Enter the Category name")]
         public string CategoryName { get; set; }
         // Foreign key to User
         public virtual User User { get; set; }

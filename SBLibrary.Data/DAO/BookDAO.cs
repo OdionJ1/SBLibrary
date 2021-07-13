@@ -1,4 +1,5 @@
 ﻿using SBLibrary.Data.IDAO;
+using SBLibrary.Data.DAO;
 using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using System;
@@ -77,6 +78,7 @@ namespace SBLibrary.Data.DAO
             context.ReadLists.Add(rlb);
             context.SaveChanges();
         }
+
 
         private User GetUser(int userId, SBLibraryContext context)
         {
@@ -191,7 +193,12 @@ namespace SBLibrary.Data.DAO
             }
         }
 
+        public void AddBook(Book book, SBLibraryContext context)
+        {
+            context.Books.Add(book);
+            context.SaveChanges();
 
+        }
 
 
         //public void AddBook(Book book, SBLibraryContext context)

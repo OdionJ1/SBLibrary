@@ -118,3 +118,27 @@ C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.
 C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CopyComplete
 C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.dll
 C:\Users\Sathya\1207_2\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.pdb
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.AssemblyReference.cache
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CoreCompileInputs.cache
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CopyComplete
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.dll
+C:\Users\Student\Documents\Projects - Newest 13-07\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.pdb
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.pdb
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.xml
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.AssemblyReference.cache
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CoreCompileInputs.cache
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CopyComplete
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.dll
+C:\Users\odion\Desktop\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.pdb

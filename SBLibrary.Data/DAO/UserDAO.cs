@@ -51,7 +51,7 @@ namespace SBLibrary.Data.DAO
                     }
                 }
 
-        public void AddBookToCollection(Book book, int UserID, SBLibraryContext context)
+        public void AddBook(Book book, int UserID, SBLibraryContext context)
         {
             context.Users.ToList().Find(x => x.UserID == UserID).Books.Add(book);
         }

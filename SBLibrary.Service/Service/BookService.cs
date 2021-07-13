@@ -3,6 +3,7 @@ using SBLibrary.Data.IDAO;
 using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using SBLibrary.Service.IService;
+using SBLibrary.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,16 @@ namespace SBLibrary.Service.Service
     public class BookService : IBookService
     {
         private IBookDAO bookDAO;
+        private ICategoryDAO categoryDAO;
+        private IAuthorDAO authorDAO;
+        private IUserDAO userDAO;
+
         public BookService()
         {
             bookDAO = new BookDAO();
+            categoryDAO = new CategoryDAO();
+            authorDAO = new AuthorDAO();
+            userDAO = new UserDAO();
         }
 
         //Check if the book is already on the list
@@ -68,6 +76,7 @@ namespace SBLibrary.Service.Service
                 }
             }
         }
+
         public IList<Book> GetFavouriteBooks(int userId)
         {
             using (var context = new SBLibraryContext())
@@ -156,6 +165,28 @@ namespace SBLibrary.Service.Service
             {
                 return bookDAO.Search(searchBy, search, context);
             }
+        }
+
+        public void AddBook(UploadBook uploadBook, int userId)
+        {
+            #region - //Create the new Book object
+            Book newBook = new Book()
+            {//Dress up Book object using values of attributes
+                Title = uploadBook.Name
+            };
+            #endregion
+            #region - Do work with DAOs to add object and add to collections
+            using (var context = new SBLibraryContext())
+            {//context object is created
+                bookDAO.AddBook(newBook, context);
+                Category category = categoryDAO.GetCategory(uploadBook.Category, context);
+                categoryDAO.AddBook(newBook, category, context);
+                Author author = authorDAO.GetAuthor(uploadBook.Author, context);
+                authorDAO.AddBook(newBook, author, context);
+                userDAO.AddBook(newBook, userId, context);//Category and Author are strings, but userId is int - due to PK being Name
+                context.SaveChanges();
+            }
+            #endregion
         }
     }
 }
