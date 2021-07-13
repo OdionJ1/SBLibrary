@@ -25,9 +25,29 @@ namespace SBLibrary.Controllers
         [Authorize]
         public ActionResult AddToFavList(int id)
         {
-            int userId = (int)Session["userId"];
             bookService.AddToFavList(id, (int)Session["userId"]);
             return RedirectToAction("GetFavourite");
+        }
+
+        [Authorize]
+        public ActionResult RemoveFromFavList(int id)
+        {
+            bookService.RemoveFromFavList(id, (int)Session["userId"]);
+            return RedirectToAction("GetFavourite");
+        }
+
+        [Authorize]
+        public ActionResult RemoveFromReadList(int id)
+        {
+            bookService.RemoveFromReadList(id, (int)Session["userId"]);
+            return RedirectToAction("GetReadList");
+        }
+
+        [Authorize]
+        public ActionResult AddToReadList(int id)
+        {
+            bookService.AddToReadList(id, (int)Session["userId"]);
+            return RedirectToAction("GetReadList");
         }
 
         [Authorize]
@@ -35,6 +55,13 @@ namespace SBLibrary.Controllers
         {
             int userId = (int)Session["userId"];
             return View(bookService.GetFavouriteBooks(userId));
+        }
+
+        [Authorize]
+        public ActionResult GetReadList()
+        {
+            int userId = (int)Session["userId"];
+            return View(bookService.GetReadList(userId));
         }
 
         [Authorize]

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Book>
 
 @{
-    ViewBag.Title = "GetFavourite";
+    ViewBag.Title = "GetReadList";
     Layout = "~/Views/Shared/_BookLayout.cshtml";
 }
 
-<h2>GetFavourite</h2>
+<h2>GetReadList</h2>
 
 <table class="table">
     <tr>
@@ -30,7 +30,7 @@
             @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
             @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
             @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID }) |
-            @Html.ActionLink("Remove from list", "RemoveFromFavList", new { id = item.BookID }, new { @style= "color: indianred" })
+            @Html.ActionLink("Remove from list", "RemoveFromReadList", new { id = item.BookID }, new { @style = "color: indianred" })
         </td>
     </tr>
 }

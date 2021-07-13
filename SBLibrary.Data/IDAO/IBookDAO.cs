@@ -12,6 +12,8 @@ namespace SBLibrary.Data.IDAO
     {
         IList<Book> GetBooks(SBLibraryContext context);
         IList<Book> GetFavouriteBooks(int userId, SBLibraryContext context);
+
+        IList<Book> GetReadList(int userId, SBLibraryContext context);
         Book GetBook(int id, SBLibraryContext context);
         IList<Book> GetBooks(int id, SBLibraryContext context);
 
@@ -19,6 +21,12 @@ namespace SBLibrary.Data.IDAO
         int EditBook(Book book);
 
         void AddToFavList(int bookId, int userId, SBLibraryContext context);
+
+        void RemoveFromFavList(int bookId, int userId, SBLibraryContext context);
+
+        void RemoveFromReadList(int bookId, int userId, SBLibraryContext context);
+
+        void AddToReadList(int bookId, int userId, SBLibraryContext context);
 
         //Delete
         //Book DelBook(int id, SBLibraryContext context);

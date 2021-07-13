@@ -191,6 +191,7 @@
     <Content Include="Views\Book\Search.cshtml" />
     <Content Include="Views\Book\GetFavourite.cshtml" />
     <Content Include="Views\Book\UploadBook.cshtml" />
+    <Content Include="Views\Book\GetReadList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -55,10 +55,17 @@
                 }
                 else
                 {
-                    <p style="color:deepskyblue ">Added to Favorite list</p>
+                    <span style="color:deepskyblue ">Added to Favorite list</span>
+                } |
+
+                @if (SBLibrary.Service.Service.BookService.exist2(item.BookID, (int)Session["userId"]) == false)
+                {
+                    @Html.ActionLink("Add to Reading list", "AddToReadList", new { id = item.BookID })
                 }
-
-
+                else
+                {
+                    <span style="color:deepskyblue ">Added to Reading list</span>
+                }
             </td>
         </tr>
     }

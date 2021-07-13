@@ -11,6 +11,8 @@ namespace SBLibrary.Service.IService
     public interface IBookService
     {
         IList<Book> GetFavouriteBooks(int userId);
+
+        IList<Book> GetReadList(int userId);
         IList<Book> GetBooks();
 
         //book service interface to get books
@@ -23,6 +25,9 @@ namespace SBLibrary.Service.IService
         int EditBook(Book book);
 
         void AddToFavList(int bookId, int userId);
+        void RemoveFromFavList(int bookId, int userId);
+        void RemoveFromReadList(int bookId, int userId);
+        void AddToReadList(int bookId, int userId);
 
         //delete
         //Book DelBook(int id);

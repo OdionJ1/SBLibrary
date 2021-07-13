@@ -43,11 +43,60 @@ namespace SBLibrary.Service.Service
                 }
             }
         }
+
+        //Check if the book is already on the list
+        public static bool exist2(int bookId, int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                var book = context.ReadLists.ToList().Find(y => y.Book.BookID == bookId && y.User.UserID == userId);
+                if (book != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public void AddToReadList(int bookId, int userId)
+        {
+            if (!exist2(bookId, userId))
+            {
+                using (var context = new SBLibraryContext())
+                {
+                    bookDAO.AddToReadList(bookId, userId, context);
+                }
+            }
+        }
         public IList<Book> GetFavouriteBooks(int userId)
         {
             using (var context = new SBLibraryContext())
             {
                 return bookDAO.GetFavouriteBooks(userId, context);
+            }
+        }
+
+        public void RemoveFromFavList(int bookId, int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                bookDAO.RemoveFromFavList(bookId, userId, context);
+            }
+        }
+
+        public void RemoveFromReadList(int bookId, int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                bookDAO.RemoveFromReadList(bookId, userId, context);
+            }
+        }
+
+        public IList<Book> GetReadList(int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return bookDAO.GetReadList(userId, context);
             }
         }
 

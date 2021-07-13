@@ -18,32 +18,64 @@ namespace SBLibrary.Data.DAO
             context = new SBLibraryContext();
         }
 
-        //Check if the book is already on the list
-        public bool exist(int bookId, int userId, SBLibraryContext context)
-        {
-            var favBook = context.Favorites.ToList().Find(y => y.Book.BookID == bookId && y.User.UserID == userId);
-            if(favBook != null)
-            {
-                return true;
-            }
-            return false;
-        }
-
         //Add book to favourite list
         public void AddToFavList(int bookId, int userId, SBLibraryContext context)
         {
-            if (!exist(bookId, userId, context))
+            Book book = GetBook(bookId, context);
+            User user = context.Users.ToList().Find(y => y.UserID == userId);
+            Favorite fav = new Favorite()
             {
-                Book book = GetBook(bookId, context);
-                User user = context.Users.ToList().Find(y => y.UserID == userId);
-                Favorite fav = new Favorite()
-                {
-                    Book = book,
-                    User = user,
-                };
-                context.Favorites.Add(fav);
+                Book = book,
+                User = user,
+            };
+            context.Favorites.Add(fav);
+            context.SaveChanges();
+        }
+
+        //Remove book from favourite list
+        public void RemoveFromFavList(int bookId, int userId, SBLibraryContext context)
+        {
+            try
+            {
+                var fav = context.Favorites.ToList().Find(y => y.Book.BookID == bookId && y.User.UserID == userId);
+                context.Favorites.Remove(fav);
                 context.SaveChanges();
             }
+            catch
+            {
+                throw;
+            }
+            
+        }
+
+        //Remove book from Reading list
+        public void RemoveFromReadList(int bookId, int userId, SBLibraryContext context)
+        {
+            try
+            {
+                var book = context.ReadLists.ToList().Find(y => y.Book.BookID == bookId && y.User.UserID == userId);
+                context.ReadLists.Remove(book);
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+
+        }
+
+        //Add book to Reading list
+        public void AddToReadList(int bookId, int userId, SBLibraryContext context)
+        {
+            Book book = GetBook(bookId, context);
+            User user = context.Users.ToList().Find(y => y.UserID == userId);
+            ReadList rlb = new ReadList()
+            {
+                Book = book,
+                User = user,
+            };
+            context.ReadLists.Add(rlb);
+            context.SaveChanges();
         }
 
         private User GetUser(int userId, SBLibraryContext context)
@@ -68,6 +100,25 @@ namespace SBLibrary.Data.DAO
             var res = context.Books.ToList().FindAll(y => find(y));
             return res;
         }
+
+        public IList<Book> GetReadList(int userId, SBLibraryContext context)
+        {
+            bool find(Book book)
+            {
+                IList<ReadList> rl = context.ReadLists.ToList();
+                for (int i = 0; i < rl.Count(); i++)
+                {
+                    if (book.BookID == rl[i].Book.BookID && rl[i].User.UserID == userId)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            var res = context.Books.ToList().FindAll(y => find(y));
+            return res;
+        }
+
         public void DelBook(int id, SBLibraryContext context)
         {
             try
