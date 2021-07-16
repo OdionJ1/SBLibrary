@@ -160,6 +160,26 @@ namespace SBLibrary.Controllers
             return View();
         }
 
+        // POST: Book/Upload
+        [Authorize]
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult AddBook(UploadBook book, HttpPostedFileBase file)
+        {
+
+            // TODO: Add insert logic here
+            int bookId = bookService.AddBook(book, (int)Session["userId"]);
+
+            if (file.ContentLength > 0)
+            {
+                //string _FileName = Path.GetFileName(file.FileName);
+                string fileExt = Path.GetExtension(file.FileName);
+                string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
+                file.SaveAs(path);
+            }
+            return RedirectToAction("GetBooks");
+        }
+
         // POST: Book/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -248,25 +268,13 @@ namespace SBLibrary.Controllers
                 return View();
             }
         }
-
-        //public ActionResult Downloads()
-        //{
-        //    var dir = new System.IO.DirectoryInfo(Server.MapPath("~/UploadedFiles/"));
-        //    System.IO.FileInfo[] fileNames = dir.GetFiles("*.*"); List<string> items = new List<string>();
-        //    foreach (var file in fileNames)
-        //    {
-        //        items.Add(file.Name);
-        //    }
-        //    return View(items);
-        //}
-
-        public FileResult Download(int id)
+      
+        public FileResult Download(string id)
         {
             // after add book is completed.. the below hardcode will be removed
-            var FileVirtualPath = "~/UploadedFiles/"+ id + ".pdf";
+            var FileVirtualPath = "~/UploadedFiles/" + id + ".pdf";
             return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
         }
-
 
     }
 }

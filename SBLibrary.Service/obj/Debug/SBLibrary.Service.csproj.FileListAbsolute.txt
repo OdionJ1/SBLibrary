@@ -187,3 +187,18 @@ C:\Users\odion\Desktop\My Projects\SBLibrary(local)\SBLibrary.Service\obj\Debug\
 C:\Users\odion\Desktop\My Projects\SBLibrary(local)\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
 C:\Users\odion\Desktop\My Projects\SBLibrary(local)\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
 C:\Users\odion\Desktop\My Projects\SBLibrary(local)\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb

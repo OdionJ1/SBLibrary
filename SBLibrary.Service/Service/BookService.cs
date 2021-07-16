@@ -3,7 +3,6 @@ using SBLibrary.Data.IDAO;
 using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using SBLibrary.Service.IService;
-using SBLibrary.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -165,6 +164,17 @@ namespace SBLibrary.Service.Service
             {
                 return bookDAO.Search(searchBy, search, context);
             }
+        }
+
+        public int AddBook(UploadBook uploadBook, int userId)
+        {
+
+
+            using (var context = new SBLibraryContext())
+            {
+                return bookDAO.AddBook(uploadBook, userId, context);
+            }
+
         }
     }
 }

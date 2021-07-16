@@ -1,5 +1,4 @@
 ﻿using SBLibrary.Data.Models.Domain;
-using SBLibrary.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +33,7 @@ namespace SBLibrary.Service.IService
         void DelBook(int id);
 
         IList<Book> Search(string searchBy, string search);
+
+        int AddBook(UploadBook uploadBook, int UserId);
     }
 }

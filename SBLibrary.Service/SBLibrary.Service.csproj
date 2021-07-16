@@ -55,7 +55,6 @@
     <Compile Include="IService\IBookService.cs" />
     <Compile Include="IService\ICategoryService.cs" />
     <Compile Include="IService\IUserService.cs" />
-    <Compile Include="Models\UploadBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AuthorService.cs" />
     <Compile Include="Service\BookService.cs" />
@@ -72,6 +71,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
