@@ -19,13 +19,20 @@ namespace SBLibrary.Service.Service
             authorDAO = new AuthorDAO();
         }
 
+        public IList<Book> GetBooks(int userId, string authorName)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return authorDAO.GetBooks(userId, authorName, context);
+            }
+        }
+
         public IList<Author> GetAuthors(int userId)
         {
             using (var context = new SBLibraryContext())
             {
                 return authorDAO.GetAuthors(userId, context);
             }
-
         }
         public Author GetAuthor(string authorName)
         {
@@ -33,7 +40,6 @@ namespace SBLibrary.Service.Service
             {
                 return authorDAO.GetAuthor(authorName, context);
             }
-
         }
 
         public void AddAuthor(int userId, Author author)

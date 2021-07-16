@@ -49,17 +49,5 @@ namespace SBLibrary.Data.DAO
             }
         }
 
-        public void AddBook(Book book, Category category, SBLibraryContext context)
-        {
-            //context.Categories.ToList().Find(x => x.CategoryName == category).Books.Add(book);
-            context.Categories.Add(category);
-            context.Books.Add(book);
-        }
-
-        //public void UploadBookToCollection(Book book, Category category, SBLibraryContext context)
-        //{
-        //    context.Categories.ToList().Find(x => x.CategoryName == category.CategoryName).Books.Add(book);
-        //}
-
     }
 }

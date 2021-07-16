@@ -11,6 +11,8 @@ namespace SBLibrary.Service.IService
     public interface IAuthorService
     {
         IList<Author> GetAuthors(int userId);
+
+        IList<Book> GetBooks(int userId, string authorName);
         Author GetAuthor(string authorName);
         void AddAuthor(int userId, Author author);
     }

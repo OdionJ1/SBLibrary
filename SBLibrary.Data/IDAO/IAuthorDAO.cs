@@ -15,7 +15,7 @@ namespace SBLibrary.Data.IDAO
         IList<Author> GetAuthors(int userId, SBLibraryContext context);
         Author GetAuthor(string id, SBLibraryContext context);
 
-        void AddBook(Book book, Author author, SBLibraryContext context);
+        IList<Book> GetBooks(int userId, string authorName, SBLibraryContext context);
         void AddAuthor(int userId, Author author, SBLibraryContext context);
     }
 }

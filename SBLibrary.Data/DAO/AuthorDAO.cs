@@ -16,7 +16,10 @@ namespace SBLibrary.Data.DAO
         {
             context = new SBLibraryContext();
         }
-
+        public IList<Book> GetBooks(int userId, string authorName, SBLibraryContext context)
+        {
+            return context.Books.ToList().FindAll(y => y.User.UserID == userId && y.Author.AuthorName == authorName);
+        }
         public Author GetAuthor(string authorName, SBLibraryContext context)
         {
             var res = context.Authors.ToList().Find(y => y.AuthorName == authorName);
@@ -48,26 +51,5 @@ namespace SBLibrary.Data.DAO
             }
         }
 
-        public void AddBook(Book book, Author author, SBLibraryContext context)
-        {
-            //context.Authors.Add(author); Not needed
-            context.Books.Add(book);
-        }
-
-        //public void UploadBookToCollection(Book book, Author author, SBLibraryContext context)
-        //{
-        //    context.Authors.ToList().Find(x => x.AuthorName == author.AuthorName).Books.Add(book);
-        //}
-
-        //public Author GetAuthor(string id, SBLibraryContext context)
-        //{
-
-        //    var res = context.Authors.ToList().Find(y => y.AuthorName == id);
-        //    return (res);
-        //}
-        //public IList<Author> GetAuthors(SBLibraryContext context)
-        //{
-        //    return context.Authors.ToList();
-        //}
     }
 }

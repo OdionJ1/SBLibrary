@@ -51,11 +51,6 @@ namespace SBLibrary.Data.DAO
                     }
                 }
 
-        public void AddBook(Book book, int UserID, SBLibraryContext context)
-        {
-            context.Users.ToList().Find(x => x.UserID == UserID).Books.Add(book);
-        }
-
         public void ResetPassword(ResetPassword resetmodel)
         {
 
@@ -71,8 +66,6 @@ namespace SBLibrary.Data.DAO
             context.Entry(currectUser).CurrentValues.SetValues(resetmodel);
 
             Console.WriteLine("done ... ");
-
-
         }
     }
 }

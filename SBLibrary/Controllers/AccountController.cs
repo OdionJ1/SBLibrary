@@ -163,8 +163,6 @@ namespace SBLibrary.Controllers
                 //int userId = 0;
 
                userService.ResetPassword(resetmodel);
-
-
             }
 
             ViewBag.SuccessMessage = "The New Password is updated.";
@@ -175,10 +173,6 @@ namespace SBLibrary.Controllers
         public ActionResult GetBook(int id)
         {
             return View(bookService.GetBook(id));
-        }
-        public ActionResult GetBooks(int id)
-        {
-            return View(bookService.GetBooks(id));
         }
 
 

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Book>
+
+@{
+    ViewBag.Title = "GetBooks";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>@ViewBag.AuthorName books</h2>
+
+<p>
+    @Html.ActionLink("Upload book", "AddBook", new { controller = "Book" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
+            @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
+            @*@Html.ActionLink("Delete", "DelBook", new { id = item.BookID })*@
+            @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID, controller = "Book" }) |
+            @Html.ActionLink("Download", "Download", new { id = item.BookID , controller = "Book" }) |
+            @if (SBLibrary.Service.Service.BookService.exist(item.BookID, (int)Session["userId"]) == false)
+            {
+                @Html.ActionLink("Add to favourite list", "AddToFavList", new { id = item.BookID, controller = "Book" })
+            }
+            else
+            {
+                <span style="color:deepskyblue ">Added to Favorite list</span>
+            } |
+
+            @if (SBLibrary.Service.Service.BookService.exist2(item.BookID, (int)Session["userId"]) == false)
+            {
+                @Html.ActionLink("Add to Reading list", "AddToReadList", new { id = item.BookID, controller = "Book" })
+            }
+            else
+            {
+                <span style="color:deepskyblue ">Added to Reading list</span>
+            }
+        </td>
+    </tr>
+}
+
+</table>

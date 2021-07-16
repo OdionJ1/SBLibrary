@@ -21,8 +21,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AuthorName)
+            @*@Html.DisplayFor(modelItem => item.AuthorName)*@
+            @Html.ActionLink(item.AuthorName, "GetBooks", new { authorName = item.AuthorName, Controller = "Author"})
         </td>
+
         <td>
             @Html.ActionLink("Delete Author", "Delete", new { id = item.AuthorName }, new { @style = "color: indianred" })
         </td>

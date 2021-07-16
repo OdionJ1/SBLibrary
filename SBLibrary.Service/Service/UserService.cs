@@ -35,8 +35,6 @@ namespace SBLibrary.Service.Service
         public void ResetPassword(ResetPassword resetmodel)
         {
             userDAO.ResetPassword(resetmodel);
-
-
         }
     }
 }

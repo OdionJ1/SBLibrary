@@ -33,11 +33,5 @@ namespace SBLibrary.Data.IDAO
         void DelBook(int id, SBLibraryContext context);
 
         IList<Book> Search(string searchBy, string search, SBLibraryContext context);
-
-        void AddBook(Book book, SBLibraryContext context);
-
-        //void AddBook(Book book, SBLibraryContext context);
-        //void AddBook(Book book,  Author author, SBLibraryContext context);
-        //void AddBook(Book book, Category categories, SBLibraryContext context);
     }
 }

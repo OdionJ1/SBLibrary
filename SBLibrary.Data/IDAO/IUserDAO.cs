@@ -15,8 +15,6 @@ namespace SBLibrary.Data.IDAO
         void CreateUsers(User user);
 
         User GetUser(string email);
-
-        void AddBook(Book book, int UserID, SBLibraryContext context);
         void ResetPassword(ResetPassword resetmodel);
     }
 }

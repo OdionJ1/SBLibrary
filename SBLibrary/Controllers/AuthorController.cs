@@ -29,6 +29,19 @@ namespace SBLibrary.Controllers
             return View(authorService.GetAuthors((int)Session["userId"]));
         }
 
+        [Authorize]
+        public ActionResult GetAuthor(string authorName)
+        {
+            return View(authorService.GetAuthor(authorName));
+        }
+
+        [Authorize]
+        public ActionResult GetBooks(string authorName)
+        {
+            ViewBag.AuthorName = authorName;
+            return View(authorService.GetBooks((int)Session["userId"], authorName));
+        }
+
         // GET: Author/Details/5
         public ActionResult Details(int id)
         {
@@ -58,7 +71,6 @@ namespace SBLibrary.Controllers
             try
             {
                 // TODO: Add insert logic here
-
                 return RedirectToAction("Index");
             }
             catch

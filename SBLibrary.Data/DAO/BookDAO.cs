@@ -46,7 +46,6 @@ namespace SBLibrary.Data.DAO
             {
                 throw;
             }
-            
         }
 
         //Remove book from Reading list
@@ -62,7 +61,6 @@ namespace SBLibrary.Data.DAO
             {
                 throw;
             }
-
         }
 
         //Add book to Reading list
@@ -192,28 +190,5 @@ namespace SBLibrary.Data.DAO
                 return srch;
             }
         }
-
-        public void AddBook(Book book, SBLibraryContext context)
-        {
-            context.Books.Add(book);
-            context.SaveChanges();
-
-        }
-
-
-        //public void AddBook(Book book, SBLibraryContext context)
-        //{
-        //    context.Books.Add(book);
-        //}
-
-        //public void AddBook(Book book, Author author, SBLibraryContext context)
-        //{
-        //    context.Books.Add(book);
-        //}
-
-        //public void AddBook(Book book, Category categories, SBLibraryContext context)
-        //{
-        //    context.Books.Add(book);
-        //}
     }
 }
