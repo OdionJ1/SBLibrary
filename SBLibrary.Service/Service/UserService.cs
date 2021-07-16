@@ -20,6 +20,7 @@ namespace SBLibrary.Service.Service
 
         public void CreateUser(User user)
         {
+            
             userDAO.CreateUsers(user);
         }
 

@@ -39,7 +39,7 @@ namespace SBLibrary.Data.DAO
 
           //call .Add and save to db
         public void CreateUsers(User user)
-                {
+        {
                     try
                     {
                         context.Users.Add(user);

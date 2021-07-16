@@ -19,6 +19,7 @@ namespace SBLibrary.Service.Service
         }
         public User UserAuthenticated(Login loginData)
         {
+            
             using(SBLibraryContext db = new SBLibraryContext())
             {
                 var user = db.Users.Where(a => a.Email == loginData.Email && a.Password == loginData.Password).FirstOrDefault();

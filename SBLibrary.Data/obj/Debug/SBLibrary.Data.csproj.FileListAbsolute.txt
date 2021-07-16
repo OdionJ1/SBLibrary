@@ -166,3 +166,15 @@ C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.Core
 C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CopyComplete
 C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.dll
 C:\Users\Sathya\ZZ\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.pdb
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.dll
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\SBLibrary.Data.pdb
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.dll
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.xml
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.AssemblyReference.cache
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CoreCompileInputs.cache
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.csproj.CopyComplete
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.dll
+C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Data\obj\Debug\SBLibrary.Data.pdb

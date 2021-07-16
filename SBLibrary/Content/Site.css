@@ -31,10 +31,26 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #1f052a;
-    border-color: #af5b1e;
+    background-color: #452209;
+    border-color: #572b0b;
 }
 
 .navbar-inverse .navbar-brand {
     color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #0e2086;
+    background-color: #866767;
+}
+
+@media (min-width: 768px) {
+.navbar {
+    border-radius: 0;
+    }
 }
