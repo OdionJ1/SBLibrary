@@ -23,6 +23,17 @@ namespace SBLibrary.Data.DAO
             return (res);
         }
 
+        public Category GetCategory(int categoryId, SBLibraryContext context)
+        {
+            var res = context.Categories.ToList().Find(y => y.CategoryId == categoryId);
+            return (res);
+        }
+
+        public IList<Book> GetBooks(int categoryId, SBLibraryContext context)
+        {
+            return context.Books.ToList().FindAll(y => y.Category.CategoryId == categoryId);
+        }
+
         public IList<Category> GetCategories(int userId, SBLibraryContext context)
         {
             return context.Categories.ToList().FindAll(y => y.User.UserID == userId);

@@ -13,6 +13,9 @@ namespace SBLibrary.Service.IService
         IList<Category> GetCategories(int userId);
         Category GetCategory(string categoryName);
 
+        Category GetCategory(int categoryId);
+
+        IList<Book> GetBooks(int categoryId);
         void AddCategory(int userId, Category category);
     }
 }

@@ -16,13 +16,19 @@ namespace SBLibrary.Data.DAO
         {
             context = new SBLibraryContext();
         }
-        public IList<Book> GetBooks(int userId, string authorName, SBLibraryContext context)
+        public IList<Book> GetBooks(int authorId, SBLibraryContext context)
         {
-            return context.Books.ToList().FindAll(y => y.User.UserID == userId && y.Author.AuthorName == authorName);
+            return context.Books.ToList().FindAll(y => y.Author.AuthorId == authorId);
         }
         public Author GetAuthor(string authorName, SBLibraryContext context)
         {
             var res = context.Authors.ToList().Find(y => y.AuthorName == authorName);
+            return (res);
+        }
+
+        public Author GetAuthor(int authorId, SBLibraryContext context)
+        {
+            var res = context.Authors.ToList().Find(y => y.AuthorId == authorId);
             return (res);
         }
 

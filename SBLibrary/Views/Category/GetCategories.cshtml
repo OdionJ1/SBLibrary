@@ -8,25 +8,26 @@
 <h2>Categories</h2>
 
 <p>
-    @Html.ActionLink("Add Category", "AddCategory")
+    @Html.ActionLink("Add New Category", "AddCategory", "Category")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CategoryName)
         </th>
-        <th>Action</th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.CategoryName)
-    </td>
-    <td>
-        @Html.ActionLink("Delete Category", "Delete", new { id = item.CategoryName }, new { @style = "color: indianred" })
-    </td>
-</tr>
+    <tr>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.CategoryName)*@
+            @Html.ActionLink(item.CategoryName, "GetBooks", new { categoryId = item.CategoryId, Controller = "Category" })
+        </td>
+        <td>
+            @Html.ActionLink("Delete Category", "Delete", new { id = item.CategoryName }, new { @style = "color: indianred" })
+        </td>
+    </tr>
 }
 
 </table>

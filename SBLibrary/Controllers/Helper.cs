@@ -24,7 +24,7 @@ namespace SBLibrary.Controllers
                     new SelectListItem()
                     {
                         Text = item.CategoryName,
-                        Value = item.CategoryName, //should be 'item.ID.ToString()' but we don't have ID anymore
+                        Value = item.CategoryId.ToString(), //should be 'item.ID.ToString()' but we don't have ID anymore
                         Selected = (item.CategoryName == (categories[0].CategoryName) ? true : false)
                     }
                     );
@@ -43,8 +43,8 @@ namespace SBLibrary.Controllers
                     new SelectListItem()
                     {
                         Text = item.AuthorName,
-                        Value = item.AuthorName,
-                        Selected = (item.AuthorName == (authors[0].AuthorName) ? true : false)
+                        Value = item.AuthorId.ToString(),
+                        Selected = (item.AuthorId == (authors[0].AuthorId) ? true : false)
                     }
                     );
             }

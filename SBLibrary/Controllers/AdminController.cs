@@ -16,7 +16,6 @@ namespace SBLibrary.Controllers
         public AdminController()
         {
             adminService = new AdminService();
-
         }
         [Authorize(Roles = "Admin")]
         public ActionResult AdminGetUsers()

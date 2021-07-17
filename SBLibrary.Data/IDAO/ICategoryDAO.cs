@@ -14,6 +14,10 @@ namespace SBLibrary.Data.IDAO
 
         IList<Category> GetCategories(int userId, SBLibraryContext context);
         Category GetCategory(string categoryName, SBLibraryContext context);
+
+        Category GetCategory(int categoryId, SBLibraryContext context);
+
+        IList<Book> GetBooks(int categoryId, SBLibraryContext context);
         void AddCategory(int userId, Category category, SBLibraryContext context);
     }
 }

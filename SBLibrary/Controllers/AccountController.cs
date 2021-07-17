@@ -177,7 +177,6 @@ namespace SBLibrary.Controllers
 
             ViewBag.SuccessMessage = "The New Password is updated.";
             return RedirectToAction("Login", "Account");
-
         }
 
         public ActionResult GetBook(int id)

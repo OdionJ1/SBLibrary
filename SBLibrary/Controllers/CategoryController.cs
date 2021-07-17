@@ -41,12 +41,24 @@ namespace SBLibrary.Controllers
             return View(categoryService.GetCategories((int)Session["userId"]));
         }
 
+        [Authorize]
+        public ActionResult GetBooks(int categoryId)
+        {
+            var category = categoryService.GetCategory(categoryId);
+            ViewBag.CategoryName = category.CategoryName;
+            return View(categoryService.GetBooks(categoryId));
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddCategory(Category categoryModel)
         {
-            categoryService.AddCategory((int)Session["userId"], categoryModel);
-            return RedirectToAction("AddBook", "Book");
+            if (ModelState.IsValid)
+            {
+                categoryService.AddCategory((int)Session["userId"], categoryModel);
+                return RedirectToAction("AddBook", "Book");
+            }
+            return View();
         }
 
         // POST: Category/Create

@@ -25,15 +25,30 @@ namespace SBLibrary.Service.Service
             {
                 return categoryDAO.GetCategories(userId, context);
             }
-
         }
+
         public Category GetCategory(string categoryName)
         {
             using (var context = new SBLibraryContext())
             {
                 return categoryDAO.GetCategory(categoryName, context);
             }
+        }
 
+        public Category GetCategory(int categoryId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return categoryDAO.GetCategory(categoryId, context);
+            }
+        }
+
+        public IList<Book> GetBooks(int categoryId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return categoryDAO.GetBooks(categoryId, context);
+            }
         }
 
         public void AddCategory(int userId, Category category)

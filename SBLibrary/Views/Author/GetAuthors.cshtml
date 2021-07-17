@@ -8,27 +8,27 @@
 <h2>Authors</h2>
 
 <p>
-    @Html.ActionLink("Add Author", "AddAuthor")
+    @Html.ActionLink("Add New Author", "AddAuthor", "Author")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AuthorName)
         </th>
-        <th>Action</th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.AuthorName)*@
-            @Html.ActionLink(item.AuthorName, "GetBooks", new { authorName = item.AuthorName, Controller = "Author"})
-        </td>
+<tr>
+    <td>
+        @*@Html.DisplayFor(modelItem => item.AuthorName)*@
+        @Html.ActionLink(item.AuthorName, "GetBooks", new { authorId = item.AuthorId, Controller = "Author" })
+    </td>
 
-        <td>
-            @Html.ActionLink("Delete Author", "Delete", new { id = item.AuthorName }, new { @style = "color: indianred" })
-        </td>
-    </tr>
+    <td>
+        @Html.ActionLink("Delete Author", "Delete", new { id = item.AuthorId }, new { @style = "color: indianred" })
+    </td>
+</tr>
 }
 
 </table>

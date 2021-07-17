@@ -166,18 +166,24 @@ namespace SBLibrary.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult AddBook(UploadBook book, HttpPostedFileBase file)
         {
-
-            // TODO: Add insert logic here
-            int bookId = bookService.AddBook(book, (int)Session["userId"]);
-
-            if (file.ContentLength > 0)
+            if (ModelState.IsValid)
             {
-                //string _FileName = Path.GetFileName(file.FileName);
-                string fileExt = Path.GetExtension(file.FileName);
-                string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
-                file.SaveAs(path);
+                if (file != null)
+                {
+                    // TODO: Add insert logic here
+                    if (file.ContentLength > 0)
+                    {
+                        int bookId = bookService.AddBook(book, (int)Session["userId"]);
+                        //string _FileName = Path.GetFileName(file.FileName);
+                        string fileExt = Path.GetExtension(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
+                        file.SaveAs(path);
+                    }
+                    return RedirectToAction("GetBooks");
+                }
             }
-            return RedirectToAction("GetBooks");
+            ViewBag.message = "Please select a file";
+            return View();
         }
 
         // POST: Book/Create

@@ -19,11 +19,11 @@ namespace SBLibrary.Service.Service
             authorDAO = new AuthorDAO();
         }
 
-        public IList<Book> GetBooks(int userId, string authorName)
+        public IList<Book> GetBooks(int authorId)
         {
             using (var context = new SBLibraryContext())
             {
-                return authorDAO.GetBooks(userId, authorName, context);
+                return authorDAO.GetBooks(authorId, context);
             }
         }
 
@@ -39,6 +39,14 @@ namespace SBLibrary.Service.Service
             using (var context = new SBLibraryContext())
             {
                 return authorDAO.GetAuthor(authorName, context);
+            }
+        }
+
+        public Author GetAuthor(int authorId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                return authorDAO.GetAuthor(authorId, context);
             }
         }
 

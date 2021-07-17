@@ -12,8 +12,10 @@ namespace SBLibrary.Service.IService
     {
         IList<Author> GetAuthors(int userId);
 
-        IList<Book> GetBooks(int userId, string authorName);
+        IList<Book> GetBooks(int authorId);
         Author GetAuthor(string authorName);
+
+        Author GetAuthor(int authorId);
         void AddAuthor(int userId, Author author);
     }
 }

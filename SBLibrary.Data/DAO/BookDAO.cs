@@ -199,17 +199,16 @@ namespace SBLibrary.Data.DAO
             {//Dress up Book object using values of attributes
                 Title = uploadBook.Name,
                 Date = DateTime.Now,
-
             };
 
 
             User currentUser = context.Users.ToList().Find(x => x.UserID == userId);
             newBook.User = currentUser;
 
-            Category bookCatagory = context.Categories.ToList().Find(y => y.CategoryName == uploadBook.Category);
+            Category bookCatagory = context.Categories.ToList().Find(y => y.CategoryId.ToString() == uploadBook.Category);
             newBook.Category = bookCatagory;
 
-            Author currentAuthor = context.Authors.ToList().Find(y => y.AuthorName == uploadBook.Author);
+            Author currentAuthor = context.Authors.ToList().Find(y => y.AuthorId.ToString() == uploadBook.Author);
             newBook.Author = currentAuthor;
 
             context.Books.Add(newBook);

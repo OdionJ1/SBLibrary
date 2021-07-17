@@ -30,16 +30,11 @@ namespace SBLibrary.Controllers
         }
 
         [Authorize]
-        public ActionResult GetAuthor(string authorName)
+        public ActionResult GetBooks(int authorId)
         {
-            return View(authorService.GetAuthor(authorName));
-        }
-
-        [Authorize]
-        public ActionResult GetBooks(string authorName)
-        {
-            ViewBag.AuthorName = authorName;
-            return View(authorService.GetBooks((int)Session["userId"], authorName));
+            var author = authorService.GetAuthor(authorId);
+            ViewBag.AuthorName = author.AuthorName;
+            return View(authorService.GetBooks(authorId));
         }
 
         // GET: Author/Details/5
@@ -60,8 +55,12 @@ namespace SBLibrary.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult AddAuthor(Author authorModel)
         {
-            authorService.AddAuthor((int)Session["userId"], authorModel);
-            return RedirectToAction("AddBook", "Book");
+            if (ModelState.IsValid)
+            {
+                authorService.AddAuthor((int)Session["userId"], authorModel);
+                return RedirectToAction("AddBook", "Book");
+            }
+            return View();
         }
 
         // POST: Author/Create
