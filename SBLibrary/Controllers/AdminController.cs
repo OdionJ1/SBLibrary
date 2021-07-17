@@ -18,12 +18,13 @@ namespace SBLibrary.Controllers
             adminService = new AdminService();
 
         }
+        [Authorize(Roles = "Admin")]
         public ActionResult AdminGetUsers()
         {
             return View(adminService.AdminGetUsers());
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public ActionResult AdminDelUser(int id)
         {
             if (id > 0)
@@ -34,6 +35,7 @@ namespace SBLibrary.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult AdminConfirmUserDel(int id)
         {
             return View("AdminDelUser", adminService.AdminGetUser(id));

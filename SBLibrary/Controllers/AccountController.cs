@@ -118,7 +118,17 @@ namespace SBLibrary.Controllers
                 cookie.Expires = DateTime.Now.AddHours(100);
                 cookie.HttpOnly = true;
                 Response.Cookies.Add(cookie);
-                return RedirectToAction("GetBooks", "Book", new { id = user.UserID });
+                if (user.RoleID == 1)
+                {
+                    //return RedirectToAction("GetBooks", "Book", new { id = user.UserID });
+                    return RedirectToAction("GetBooks", "Book");
+                }
+                else
+                {
+                    //return RedirectToAction("AdminGetUsers", "Admin", new { id = user.UserID });
+                    return RedirectToAction("AdminGetUsers", "Admin");
+                }
+                
             }
             return View();
         }

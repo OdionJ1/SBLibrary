@@ -22,9 +22,21 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("BookList", "GetBooks", "Book")</li>
-                        @*<li>@Html.ActionLink("User", "AdminGetUsers", "Admin")</li>*@
+                        if (User.IsInRole("User"))
+                        {
+                            <li>@Html.ActionLink("BookList", "GetBooks", "Book")</li>
+                            @*<li>@Html.ActionLink("Logout", "Logout", "Account")</li>*@
+                        }
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <ul class="navbar-brand">@User.Identity.Name</ul>
+                            </li>
+                            <li>@Html.ActionLink("Manage User", "AdminGetUsers", "Admin")</li>
+                            @*<li>@Html.ActionLink("Logout", "Logout", "Account")</li>*@
+                        }
                         <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+
                     }
                     else
                     {

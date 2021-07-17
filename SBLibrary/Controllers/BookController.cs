@@ -23,49 +23,49 @@ namespace SBLibrary.Controllers
             bookService = new BookService();
         }
 
-        [Authorize]
+        [Authorize (Roles = "User")]
         public ActionResult AddToFavList(int id)
         {
             bookService.AddToFavList(id, (int)Session["userId"]);
             return RedirectToAction("GetFavourite");
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult RemoveFromFavList(int id)
         {
             bookService.RemoveFromFavList(id, (int)Session["userId"]);
             return RedirectToAction("GetFavourite");
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult RemoveFromReadList(int id)
         {
             bookService.RemoveFromReadList(id, (int)Session["userId"]);
             return RedirectToAction("GetReadList");
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult AddToReadList(int id)
         {
             bookService.AddToReadList(id, (int)Session["userId"]);
             return RedirectToAction("GetReadList");
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult GetFavourite()
         {
             int userId = (int)Session["userId"];
             return View(bookService.GetFavouriteBooks(userId));
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult GetReadList()
         {
             int userId = (int)Session["userId"];
             return View(bookService.GetReadList(userId));
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult GetBooks()
         {
             var user = userService.GetUser(User.Identity.Name);
@@ -78,7 +78,7 @@ namespace SBLibrary.Controllers
         }
 
         //Only a registered user will access the method
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult EditBook(int id)
         {
 
@@ -86,7 +86,7 @@ namespace SBLibrary.Controllers
         }
 
         //Only a registered user will access the method
-        [Authorize]
+        [Authorize(Roles = "User")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditBook(Book edit)
@@ -119,7 +119,7 @@ namespace SBLibrary.Controllers
         }
 
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         public ActionResult DelBook(int id)
@@ -133,7 +133,7 @@ namespace SBLibrary.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult Search(string searchBy, string search)
         {
             return View(bookService.Search(searchBy, search));
@@ -161,7 +161,7 @@ namespace SBLibrary.Controllers
         }
 
         // POST: Book/Upload
-        [Authorize]
+        [Authorize(Roles = "User")]
         [HttpPost]
         //[ValidateAntiForgeryToken]
         public ActionResult AddBook(UploadBook book, HttpPostedFileBase file)

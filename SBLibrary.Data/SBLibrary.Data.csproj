@@ -42,7 +42,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +57,7 @@
     <Compile Include="DAO\AuthorDAO.cs" />
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\Role.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="IDAO\IAdminDAO.cs" />
     <Compile Include="IDAO\IAuthorDAO.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="Models\Domain\ResetPassword.cs" />
     <Compile Include="Models\Domain\UploadBook.cs" />
     <Compile Include="Models\Domain\User.cs" />
+    <Compile Include="Models\Domain\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Repository\SBLibraryContext.cs" />
     <Compile Include="Models\Repository\SBLibraryInitialiser.cs" />
