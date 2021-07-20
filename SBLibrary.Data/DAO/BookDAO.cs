@@ -126,7 +126,6 @@ namespace SBLibrary.Data.DAO
                 Book book = context.Books.Find(id);
                 context.Books.Remove(book);
                 context.SaveChanges();
-
             }
             catch
             {

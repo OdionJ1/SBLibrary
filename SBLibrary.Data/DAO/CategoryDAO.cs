@@ -3,6 +3,7 @@ using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,21 @@ namespace SBLibrary.Data.DAO
                 };
                 context.Categories.Add(category2);
                 context.SaveChanges();
+            }
+        }
+
+        public int EditCategory(Category category)
+        {
+            try
+            {
+                context.Entry(category).State = EntityState.Modified;  //use user.data.entity for enter
+                context.SaveChanges();
+
+                return 1;
+            }
+            catch
+            {
+                throw;
             }
         }
 

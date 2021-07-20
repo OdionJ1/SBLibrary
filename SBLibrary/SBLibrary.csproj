@@ -205,6 +205,9 @@
     <Content Include="Views\Admin\AdminGetUsers.cshtml" />
     <Content Include="Views\Admin\AdminDelUser.cshtml" />
     <Content Include="Views\Category\GetBooks.cshtml" />
+    <Content Include="Views\Author\EditAuthor.cshtml" />
+    <Content Include="Views\Category\EditCategory.cshtml" />
+    <Content Include="Views\Author\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

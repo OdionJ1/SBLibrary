@@ -35,13 +35,13 @@ namespace SBLibrary.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult GetCategories()
         {
             return View(categoryService.GetCategories((int)Session["userId"]));
         }
 
-        [Authorize]
+        [Authorize(Roles = "User")]
         public ActionResult GetBooks(int categoryId)
         {
             var category = categoryService.GetCategory(categoryId);
@@ -49,6 +49,7 @@ namespace SBLibrary.Controllers
             return View(categoryService.GetBooks(categoryId));
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddCategory(Category categoryModel)
@@ -58,6 +59,27 @@ namespace SBLibrary.Controllers
                 categoryService.AddCategory((int)Session["userId"], categoryModel);
                 return RedirectToAction("AddBook", "Book");
             }
+            return View();
+        }
+
+        [Authorize(Roles = "User")]
+        public ActionResult EditCategory(int id)
+        {
+            return View(categoryService.GetCategory(id));
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditCategory(Category edit)
+        {
+            if (ModelState.IsValid)
+            {
+                categoryService.EditCategory(edit);
+
+                return RedirectToAction("GetCategories");
+            }
+
             return View();
         }
 

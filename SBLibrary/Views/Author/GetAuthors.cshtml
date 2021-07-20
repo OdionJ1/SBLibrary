@@ -26,7 +26,8 @@
     </td>
 
     <td>
-        @Html.ActionLink("Delete Author", "Delete", new { id = item.AuthorId }, new { @style = "color: indianred" })
+        @Html.ActionLink("Edit Author", "EditAuthor", new { id = item.AuthorId }) |
+        @Html.ActionLink("Delete Author", "ConfirmDelete", new { authorid = item.AuthorId }, new { @style = "color: indianred" })
     </td>
 </tr>
 }

@@ -3,6 +3,7 @@ using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,5 +58,34 @@ namespace SBLibrary.Data.DAO
             }
         }
 
+        public int EditAuthor(Author author)
+        {
+            try
+            {
+                context.Entry(author).State = EntityState.Modified;  //use user.data.entity for enter
+                context.SaveChanges();
+
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public void DelAuthor(int id, SBLibraryContext context)
+        {
+            try
+            {
+                Author author = context.Authors.Find(id);
+                context.Authors.Remove(author);
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+
+        }
     }
 }

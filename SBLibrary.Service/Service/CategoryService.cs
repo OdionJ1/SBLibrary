@@ -58,5 +58,10 @@ namespace SBLibrary.Service.Service
                 categoryDAO.AddCategory(userId, category, context);
             }
         }
+
+        public int EditCategory(Category category)
+        {
+            return categoryDAO.EditCategory(category);
+        }
     }
 }

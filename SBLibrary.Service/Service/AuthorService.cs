@@ -50,11 +50,25 @@ namespace SBLibrary.Service.Service
             }
         }
 
+        public int EditAuthor(Author author)
+        {
+            return authorDAO.EditAuthor(author);
+        }
+
         public void AddAuthor(int userId, Author author)
         {
             using (var context = new SBLibraryContext())
             {
                 authorDAO.AddAuthor(userId, author, context);
+            }
+        }
+
+        public void DelAuthor(int id)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                authorDAO.DelAuthor(id, context);
+
             }
         }
     }

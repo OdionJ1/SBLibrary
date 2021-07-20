@@ -279,7 +279,7 @@ namespace SBLibrary.Controllers
         {
             // after add book is completed.. the below hardcode will be removed
             var FileVirtualPath = "~/UploadedFiles/" + id + ".pdf";
-            return File(FileVirtualPath, "application/force-download", Path.GetFileName(FileVirtualPath));
+            return File(FileVirtualPath, "application/pdf", Path.GetFileName(FileVirtualPath));
         }
 
     }
