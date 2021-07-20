@@ -208,6 +208,7 @@
     <Content Include="Views\Author\EditAuthor.cshtml" />
     <Content Include="Views\Category\EditCategory.cshtml" />
     <Content Include="Views\Author\ConfirmDelete.cshtml" />
+    <Content Include="Views\Category\ConfirmDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

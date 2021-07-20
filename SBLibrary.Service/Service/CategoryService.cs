@@ -63,5 +63,14 @@ namespace SBLibrary.Service.Service
         {
             return categoryDAO.EditCategory(category);
         }
+
+        public void DelCategory(int id)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                categoryDAO.DelCategory(id, context);
+
+            }
+        }
     }
 }

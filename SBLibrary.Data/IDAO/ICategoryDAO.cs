@@ -20,6 +20,8 @@ namespace SBLibrary.Data.IDAO
         int EditCategory(Category category);
 
         IList<Book> GetBooks(int categoryId, SBLibraryContext context);
+
+        void DelCategory(int id, SBLibraryContext context);
         void AddCategory(int userId, Category category, SBLibraryContext context);
     }
 }

@@ -18,6 +18,8 @@ namespace SBLibrary.Service.IService
         int EditCategory(Category category);
 
         IList<Book> GetBooks(int categoryId);
+
+        void DelCategory(int id);
         void AddCategory(int userId, Category category);
     }
 }

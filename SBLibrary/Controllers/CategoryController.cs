@@ -46,6 +46,7 @@ namespace SBLibrary.Controllers
         {
             var category = categoryService.GetCategory(categoryId);
             ViewBag.CategoryName = category.CategoryName;
+            ViewBag.CategoryId = category.CategoryId;
             return View(categoryService.GetBooks(categoryId));
         }
 
@@ -80,6 +81,26 @@ namespace SBLibrary.Controllers
                 return RedirectToAction("GetCategories");
             }
 
+            return View();
+        }
+
+        [Authorize(Roles = "User")]
+        public ActionResult ConfirmDelete(int categoryId)
+        {
+            var category = categoryService.GetCategory(categoryId);
+            ViewBag.CategoryName = category.CategoryName;
+            ViewBag.CategoryId = category.CategoryId;
+            return View(categoryService.GetBooks(categoryId));
+        }
+
+        [Authorize(Roles = "User")]
+        public ActionResult DelCategory(int id)
+        {
+            if (id > 0)
+            {
+                categoryService.DelCategory(id);
+                return RedirectToAction("GetCategories");
+            }
             return View();
         }
 

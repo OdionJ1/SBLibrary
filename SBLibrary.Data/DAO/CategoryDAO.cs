@@ -76,5 +76,20 @@ namespace SBLibrary.Data.DAO
             }
         }
 
+        public void DelCategory(int id, SBLibraryContext context)
+        {
+            try
+            {
+                Category category = context.Categories.Find(id);
+                context.Categories.Remove(category);
+                context.SaveChanges();
+            }
+            catch
+            {
+                throw;
+            }
+
+        }
+
     }
 }

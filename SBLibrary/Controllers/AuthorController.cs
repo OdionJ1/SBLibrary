@@ -34,6 +34,7 @@ namespace SBLibrary.Controllers
         {
             var author = authorService.GetAuthor(authorId);
             ViewBag.AuthorName = author.AuthorName;
+            ViewBag.AuthorId = author.AuthorId;
             return View(authorService.GetBooks(authorId));
         }
 
@@ -73,7 +74,6 @@ namespace SBLibrary.Controllers
             if (id > 0)
             {
                 authorService.DelAuthor(id);
-                //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
                 return RedirectToAction("GetAuthors");
             }
             return View();

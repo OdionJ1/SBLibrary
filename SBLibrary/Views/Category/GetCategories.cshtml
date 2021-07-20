@@ -26,7 +26,7 @@
         </td>
         <td>
             @Html.ActionLink("Rename", "EditCategory", new { id = item.CategoryId }) |
-            @Html.ActionLink("Delete Category", "Delete", new { id = item.CategoryName }, new { @style = "color: indianred" })
+            @Html.ActionLink("Delete Category", "ConfirmDelete", new { categoryId = item.CategoryId }, new { @style = "color: indianred" })
         </td>
     </tr>
 }
