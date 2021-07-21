@@ -217,3 +217,18 @@ C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Service\obj\De
 C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
 C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
 C:\Users\Excel Felix\source\SDDProject-16-jul\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll.config
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.dll
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Service.pdb
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.dll
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.pdb
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\SBLibrary.Data.dll.config
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.xml
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.AssemblyReference.cache
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CoreCompileInputs.cache
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
+C:\Users\odion\Desktop\Test\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb

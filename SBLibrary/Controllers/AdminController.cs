@@ -12,7 +12,6 @@ namespace SBLibrary.Controllers
     {
         IAdminService adminService;
 
-
         public AdminController()
         {
             adminService = new AdminService();

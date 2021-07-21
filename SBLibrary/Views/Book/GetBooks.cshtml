@@ -38,7 +38,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.ActionLink(item.Title, "ReadBook", new { id = item.BookID, name = item.Title }, new { target = "_blank" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)

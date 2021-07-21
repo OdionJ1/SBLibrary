@@ -175,8 +175,8 @@ namespace SBLibrary.Controllers
                     {
                         int bookId = bookService.AddBook(book, (int)Session["userId"]);
                         //string _FileName = Path.GetFileName(file.FileName);
-                        string fileExt = Path.GetExtension(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
+                        //string fileExt = Path.GetExtension(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name);
                         file.SaveAs(path);
                     }
                     return RedirectToAction("GetBooks");
@@ -185,6 +185,20 @@ namespace SBLibrary.Controllers
             ViewBag.message = "Please select a file";
             return View();
         }
+
+        public ActionResult ReadBook(int id, string name)
+        {
+
+            string bookName = id + "_" + name;
+            //string fileExt = ".?";
+            string path = Path.Combine(Server.MapPath("~/UploadedFiles"), id + "_" + name);
+            string contentType = "application/pdf";
+
+            return new FilePathResult(path, contentType);
+
+        }
+
+
 
         // POST: Book/Create
         [HttpPost]
