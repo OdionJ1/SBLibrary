@@ -150,9 +150,18 @@ namespace SBLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                userService.CreateUser(usermodel);
-                //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
-                return RedirectToAction("Login");
+                var user = userService.GetUser(usermodel.Email);
+                if (user == null)
+                {
+                    userService.CreateUser(usermodel);
+                    //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ViewBag.message2 = "There is already a registered user with that email";
+                }
+                
             }
             return View();
         }
