@@ -26,6 +26,22 @@
             @Html.DisplayFor(model => model.Date)
         </dd>
 
+        <dt>
+            Author
+        </dt>
+
+        <dd>
+            @Html.ActionLink((string)ViewBag.AuthorName, "GetBooks", new { authorId = ViewBag.AuthorId, Controller = "Author" })
+        </dd>
+
+        <dt>
+            Category
+        </dt>
+
+        <dd>
+            @Html.ActionLink((string)ViewBag.CategoryName, "GetBooks", new { categoryId = ViewBag.CategoryId, Controller = "Category" })
+        </dd>
+
 
     </dl>
 </div>

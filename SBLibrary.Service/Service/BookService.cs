@@ -111,10 +111,9 @@ namespace SBLibrary.Service.Service
         //impliment get book interface for details
         public Book GetBook(int id)
         {
-            using (var context = new SBLibraryContext())
-            {
-                return bookDAO.GetBook(id, context);
-            }
+            var context = new SBLibraryContext();
+            var book = bookDAO.GetBook(id, context);
+            return book;
         }
 
         public IList<Book> GetBooks()

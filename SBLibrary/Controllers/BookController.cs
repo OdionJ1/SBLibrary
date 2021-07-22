@@ -289,10 +289,10 @@ namespace SBLibrary.Controllers
             }
         }
       
-        public FileResult Download(string id)
+        public FileResult Download(string id, string name)
         {
             // after add book is completed.. the below hardcode will be removed
-            var FileVirtualPath = "~/UploadedFiles/" + id + ".pdf";
+            var FileVirtualPath = "~/UploadedFiles/" + id + "_" + name;
             return File(FileVirtualPath, "application/pdf", Path.GetFileName(FileVirtualPath));
         }
 

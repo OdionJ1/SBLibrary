@@ -14,6 +14,7 @@ namespace SBLibrary.Data.Models.Repository
         //specify the connection string to use
         public SBLibraryContext() : base("SBLibraryContext")
         {
+            //this.Configuration.LazyLoadingEnabled = false;
             Database.SetInitializer(new SBLInitializer());
         }
         public DbSet<User> Users { get; set; }

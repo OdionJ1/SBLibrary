@@ -15,12 +15,16 @@ namespace SBLibrary.Controllers
         IUserService userService;
         LoginService loginService;
         IBookService bookService;
+        IAuthorService authorService;
+        ICategoryService categoryService;
 
         public AccountController()
         {
             userService = new UserService();
             loginService = new LoginService();
             bookService = new BookService();
+            authorService = new AuthorService();
+            categoryService = new CategoryService();
         }
         // GET: Account
         public ActionResult Index()
@@ -181,10 +185,13 @@ namespace SBLibrary.Controllers
 
         public ActionResult GetBook(int id)
         {
-            return View(bookService.GetBook(id));
+            var book = bookService.GetBook(id);
+            ViewBag.AuthorName = book.Author.AuthorName;
+            ViewBag.AuthorId = book.Author.AuthorId;
+            ViewBag.CategoryName = book.Category.CategoryName;
+            ViewBag.CategoryId = book.Category.CategoryId;
+
+            return View(book);
         }
-
-
-
     }
 }
