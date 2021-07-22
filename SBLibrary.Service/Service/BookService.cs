@@ -157,11 +157,11 @@ namespace SBLibrary.Service.Service
             }
         }
 
-        public IList<Book> Search(string searchBy, string search)
+        public IList<Book> Search(string searchBy, int userId, string search)
         {
             using (var context = new SBLibraryContext())
             {
-                return bookDAO.Search(searchBy, search, context);
+                return bookDAO.Search(searchBy, userId, search, context);
             }
         }
 

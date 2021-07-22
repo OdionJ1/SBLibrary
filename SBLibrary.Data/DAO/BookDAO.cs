@@ -184,30 +184,29 @@ namespace SBLibrary.Data.DAO
         }
 
         //Serch implimentation 
-        public IList<Book> Search(string searchBy, string search, SBLibraryContext context)
+        public IList<Book> Search(string searchBy, int userId, string search, SBLibraryContext context)
         {
             if (searchBy == "Title")
             {
-                var srch = context.Books.Where(x => x.Title.StartsWith(search) || search == null).ToList();
+                var srch = context.Books.ToList().FindAll(y => y.Title.StartsWith(search) && y.User.UserID == userId || search == null);
+                //var srch = context.Books.Where(x => x.Title.StartsWith(search) || search == null).ToList();
                 return srch;
             }
             else
             {
-                var srch = context.Books.Where(x => x.Author.AuthorName.StartsWith(search)).ToList();
+                var srch = context.Books.ToList().FindAll(y => y.Author.AuthorName.StartsWith(search) && y.User.UserID == userId || search == null);
+                //var srch = context.Books.Where(x => x.Author.AuthorName.StartsWith(search)).ToList();
                 return srch;
             }
         }
 
         public int AddBook(UploadBook uploadBook, int userId, SBLibraryContext context)
         {
-
-
             Book newBook = new Book()
             {//Dress up Book object using values of attributes
                 Title = uploadBook.Name,
                 Date = DateTime.Now,
             };
-
 
             User currentUser = context.Users.ToList().Find(x => x.UserID == userId);
             newBook.User = currentUser;

@@ -32,7 +32,7 @@ namespace SBLibrary.Service.IService
         //Book DelBook(int id);
         void DelBook(int id);
 
-        IList<Book> Search(string searchBy, string search);
+        IList<Book> Search(string searchBy, int userId, string search);
 
         int AddBook(UploadBook uploadBook, int UserId);
 
