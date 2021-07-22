@@ -24,6 +24,7 @@ namespace SBLibrary.Data.Models.Repository
         public DbSet<Category> Categories { get; set; }
         public DbSet<ReadList> ReadLists { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<ShareBook> ShareBooks { get; set; }
 
         //prevent db from pluralizing db name 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

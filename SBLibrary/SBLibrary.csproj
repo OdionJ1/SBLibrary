@@ -209,6 +209,7 @@
     <Content Include="Views\Category\EditCategory.cshtml" />
     <Content Include="Views\Author\ConfirmDelete.cshtml" />
     <Content Include="Views\Category\ConfirmDelete.cshtml" />
+    <Content Include="Views\Book\ShareBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

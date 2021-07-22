@@ -35,5 +35,7 @@ namespace SBLibrary.Service.IService
         IList<Book> Search(string searchBy, string search);
 
         int AddBook(UploadBook uploadBook, int UserId);
+
+        void ShareBook(ShareBook shareBook);
     }
 }

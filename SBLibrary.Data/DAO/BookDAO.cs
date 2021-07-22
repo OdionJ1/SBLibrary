@@ -172,6 +172,14 @@ namespace SBLibrary.Data.DAO
         public IList<Book> GetBooks(int id, SBLibraryContext context)
         {
             var res = context.Books.ToList().FindAll(y => y.User.UserID == id);
+            List<ShareBook> sharedBooks = context.ShareBooks.ToList().FindAll(y => y.UserID == id);
+
+            List<int> sharedBookIds = new List<int>();
+            sharedBooks.ForEach(s => sharedBookIds.Add(s.BookID));
+
+            var sBooks = context.Books.ToList().FindAll(y => sharedBookIds.Contains(y.BookID));
+
+            sBooks.ForEach(x => res.Add(x));
             return res;
         }
 
@@ -214,6 +222,31 @@ namespace SBLibrary.Data.DAO
             context.SaveChanges();
 
             return newBook.BookID;
+        }
+
+        public void ShareBook(ShareBook shareBook, SBLibraryContext context)
+        {
+            //context.Users.ToList().Find
+            User sharedUser = context.Users.ToList().Find(user => user.Email == shareBook.EmailID);
+
+
+            if (sharedUser != null)
+            {
+                IQueryable<ShareBook> sharedBook = context.ShareBooks.Where(x => x.BookID == shareBook.BookID && x.UserID == sharedUser.UserID);
+
+                int booksCount = sharedBook.Count();
+
+
+                if (booksCount == 0)
+                {
+                    shareBook.UserID = sharedUser.UserID;
+
+                    context.ShareBooks.Add(shareBook);
+                    context.SaveChanges();
+                }
+
+            }
+
         }
 
     }

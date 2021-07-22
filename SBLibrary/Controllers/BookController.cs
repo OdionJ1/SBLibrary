@@ -170,19 +170,17 @@ namespace SBLibrary.Controllers
             {
                 if (file != null)
                 {
-                    // TODO: Add insert logic here
                     if (file.ContentLength > 0)
                     {
                         int bookId = bookService.AddBook(book, (int)Session["userId"]);
-                        //string _FileName = Path.GetFileName(file.FileName);
-                        //string fileExt = Path.GetExtension(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name);
+
+                        string fileExt = Path.GetExtension(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
                         file.SaveAs(path);
                     }
                     return RedirectToAction("GetBooks");
                 }
             }
-            ViewBag.message = "Please select a file";
             return View();
         }
 
@@ -191,7 +189,7 @@ namespace SBLibrary.Controllers
 
             string bookName = id + "_" + name;
             //string fileExt = ".?";
-            string path = Path.Combine(Server.MapPath("~/UploadedFiles"), id + "_" + name);
+            string path = Path.Combine(Server.MapPath("~/UploadedFiles"), id + "_" + name + ".pdf");
             string contentType = "application/pdf";
 
             return new FilePathResult(path, contentType);
@@ -268,33 +266,30 @@ namespace SBLibrary.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult UploadBook(HttpPostedFileBase file)
+ 
+
+        public FileResult Download(string id)
         {
-            try
-            {
-                if (file.ContentLength > 0)
-                {
-                    string _FileName = Path.GetFileName(file.FileName);
-                    string _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
-                    file.SaveAs(_path);
-                }
-                ViewBag.Message = "File Uploaded Successfully!!";
-                return View();
-            }
-            catch
-            {
-                ViewBag.Message = "File upload failed!!";
-                return View();
-            }
-        }
-      
-        public FileResult Download(string id, string name)
-        {
-            // after add book is completed.. the below hardcode will be removed
-            var FileVirtualPath = "~/UploadedFiles/" + id + "_" + name;
+            var FileVirtualPath = "~/UploadedFiles/" + id + ".pdf";
             return File(FileVirtualPath, "application/pdf", Path.GetFileName(FileVirtualPath));
         }
 
+        public ActionResult ShareBook(int id)
+        {
+            return View("ShareBook", bookService.GetBook(id));
+            //return View();
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult ShareBook(ShareBook book)
+        {
+
+            bookService.ShareBook(book);
+
+            return RedirectToAction("GetBooks");
+        }
     }
+
 }
+

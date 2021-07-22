@@ -175,5 +175,14 @@ namespace SBLibrary.Service.Service
             }
 
         }
+
+        public void ShareBook(ShareBook shareBook)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                bookDAO.ShareBook(shareBook, context);
+            }
+
+        }
     }
 }

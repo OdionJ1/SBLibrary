@@ -49,6 +49,7 @@
                 @*@Html.ActionLink("Delete", "DelBook", new { id = item.BookID })*@
                 @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID }) |
                 @Html.ActionLink("Download", "Download", new { id = item.BookID + "_" + item.Title }) |
+                @Html.ActionLink("ShareBook", "ShareBook", new { id = item.BookID }) |
                 @if (SBLibrary.Service.Service.BookService.exist(item.BookID, (int)Session["userId"]) == false)
                 {
                     @Html.ActionLink("Add to favourite list", "AddToFavList", new { id = item.BookID })
