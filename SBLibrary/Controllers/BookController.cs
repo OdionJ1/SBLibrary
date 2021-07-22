@@ -136,7 +136,7 @@ namespace SBLibrary.Controllers
         [Authorize(Roles = "User")]
         public ActionResult Search(string searchBy, string search)
         {
-            return View(bookService.Search(searchBy, search));
+            return View(bookService.Search(searchBy, (int)Session["userId"], search));
         }
 
         // GET: Book
@@ -183,6 +183,8 @@ namespace SBLibrary.Controllers
             }
             return View();
         }
+
+        [Authorize(Roles = "User")]
         public ActionResult ReadBook(int id, string name)
         {
             string bookName = id + "_" + name;
@@ -262,17 +264,21 @@ namespace SBLibrary.Controllers
             return View();
         }
 
+
+        [Authorize(Roles = "User")]
         public FileResult Download(string id)
         {
             var FileVirtualPath = "~/UploadedFiles/" + id + ".pdf";
             return File(FileVirtualPath, "application/pdf", Path.GetFileName(FileVirtualPath));
         }
 
+        [Authorize(Roles = "User")]
         public ActionResult ShareBook(int id)
         {
             return View("ShareBook", bookService.GetBook(id));
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ShareBook(ShareBook book)
