@@ -1,9 +1,12 @@
 ﻿using SBLibrary.Data.Models.Domain;
+using SBLibrary.Data.Models.Repository;
 using SBLibrary.Service.IService;
 using SBLibrary.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -110,6 +113,7 @@ namespace SBLibrary.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Login(Login loginmodel)
         {
             var user = loginService.UserAuthenticated(loginmodel);
@@ -132,7 +136,7 @@ namespace SBLibrary.Controllers
                     //return RedirectToAction("AdminGetUsers", "Admin", new { id = user.UserID });
                     return RedirectToAction("AdminGetUsers", "Admin");
                 }
-                
+
             }
             return View();
         }
@@ -176,7 +180,7 @@ namespace SBLibrary.Controllers
                 //int userId =  (int) Session["userId"];
                 //int userId = 0;
 
-               userService.ResetPassword(resetmodel);
+                userService.ResetPassword(resetmodel);
             }
 
             ViewBag.SuccessMessage = "The New Password is updated.";
@@ -193,5 +197,24 @@ namespace SBLibrary.Controllers
 
             return View(book);
         }
+
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+       // [Authorize(Roles = "User")]
+        [HttpPost]
+        public ActionResult ForgotPassword(string EmailID)
+        {
+          
+                userService.ForgotPassword(EmailID);
+                ViewBag.Message = " A Temp password has been sent to your email id.";
+
+            return View();
+        }
+
     }
+
 }
+

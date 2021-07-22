@@ -183,10 +183,8 @@ namespace SBLibrary.Controllers
             }
             return View();
         }
-
         public ActionResult ReadBook(int id, string name)
         {
-
             string bookName = id + "_" + name;
             //string fileExt = ".?";
             string path = Path.Combine(Server.MapPath("~/UploadedFiles"), id + "_" + name + ".pdf");
@@ -195,8 +193,6 @@ namespace SBLibrary.Controllers
             return new FilePathResult(path, contentType);
 
         }
-
-
 
         // POST: Book/Create
         [HttpPost]
@@ -266,8 +262,6 @@ namespace SBLibrary.Controllers
             return View();
         }
 
- 
-
         public FileResult Download(string id)
         {
             var FileVirtualPath = "~/UploadedFiles/" + id + ".pdf";
@@ -277,19 +271,15 @@ namespace SBLibrary.Controllers
         public ActionResult ShareBook(int id)
         {
             return View("ShareBook", bookService.GetBook(id));
-            //return View();
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult ShareBook(ShareBook book)
         {
-
             bookService.ShareBook(book);
-
             return RedirectToAction("GetBooks");
         }
     }
-
 }
 

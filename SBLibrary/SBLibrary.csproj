@@ -210,6 +210,7 @@
     <Content Include="Views\Author\ConfirmDelete.cshtml" />
     <Content Include="Views\Category\ConfirmDelete.cshtml" />
     <Content Include="Views\Book\ShareBook.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,5 +15,6 @@ namespace SBLibrary.Data.Models.Domain
 
         //one to many relationship
         public List<User> Users { get; set; }
+
     }
 }

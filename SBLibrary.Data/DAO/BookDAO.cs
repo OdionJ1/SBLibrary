@@ -172,6 +172,7 @@ namespace SBLibrary.Data.DAO
         public IList<Book> GetBooks(int id, SBLibraryContext context)
         {
             var res = context.Books.ToList().FindAll(y => y.User.UserID == id);
+
             List<ShareBook> sharedBooks = context.ShareBooks.ToList().FindAll(y => y.UserID == id);
 
             List<int> sharedBookIds = new List<int>();

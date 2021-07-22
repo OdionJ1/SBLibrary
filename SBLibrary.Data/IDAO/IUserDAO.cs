@@ -16,5 +16,7 @@ namespace SBLibrary.Data.IDAO
 
         User GetUser(string email);
         void ResetPassword(ResetPassword resetmodel);
+
+        void ForgotPassword(string EmailID);
     }
 }

@@ -45,6 +45,8 @@ namespace SBLibrary.Data.Models.Domain
         public int RoleID { get; set; }
         [ForeignKey("RoleID")]
         public UserRole Role { get; set; }
+        public string ResetCode { get; set; }
+
 
         public virtual ICollection<Book> Books { get; set; }
         public virtual ICollection<Author> Authors { get; set; }
