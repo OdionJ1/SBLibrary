@@ -33,9 +33,9 @@ namespace SBLibrary.Service.Service
         {
             return userDAO.GetUser(email);
         }
-        public void ResetPassword(ResetPassword resetmodel)
+        public void ChangePassword(ChangePassword resetmodel)
         {
-            userDAO.ResetPassword(resetmodel);
+            userDAO.ChangePassword(resetmodel);
         }
 
         public void ForgotPassword(string EmailID)

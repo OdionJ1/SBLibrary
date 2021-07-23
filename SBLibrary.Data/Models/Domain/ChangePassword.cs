@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SBLibrary.Data.Models.Domain
 {
-    public class ResetPassword
+    public class ChangePassword
     {
         [Key]
 

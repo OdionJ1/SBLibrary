@@ -55,7 +55,7 @@ namespace SBLibrary.Data.DAO
                     }
                 }
 
-        public void ResetPassword(ResetPassword resetmodel)
+        public void ChangePassword(ChangePassword resetmodel)
         {
 
             User currectUser = GetUser(resetmodel.EmailID);

@@ -33,7 +33,7 @@ namespace SBLibrary.Data.Models.Repository
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        public System.Data.Entity.DbSet<SBLibrary.Data.Models.Domain.ResetPassword> ResetPasswords { get; set; }
+        public System.Data.Entity.DbSet<SBLibrary.Data.Models.Domain.ChangePassword> ResetPasswords { get; set; }
 
         public System.Data.Entity.DbSet<SBLibrary.Data.Models.Domain.UploadBook> UploadBooks { get; set; }
 

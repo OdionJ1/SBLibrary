@@ -71,7 +71,7 @@
     <Compile Include="Models\Domain\ForgotPassword.cs" />
     <Compile Include="Models\Domain\Login.cs" />
     <Compile Include="Models\Domain\ReadList.cs" />
-    <Compile Include="Models\Domain\ResetPassword.cs" />
+    <Compile Include="Models\Domain\ChangePassword.cs" />
     <Compile Include="Models\Domain\ShareBook.cs" />
     <Compile Include="Models\Domain\UploadBook.cs" />
     <Compile Include="Models\Domain\User.cs" />

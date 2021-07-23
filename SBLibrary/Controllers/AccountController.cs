@@ -176,20 +176,20 @@ namespace SBLibrary.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult ResetPassword()
+        public ActionResult ChangePassword()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult ResetPassword(ResetPassword resetmodel)
+        public ActionResult ChangePassword(ChangePassword changePassword)
         {
             if (ModelState.IsValid)
             {
                 //int userId =  (int) Session["userId"];
                 //int userId = 0;
 
-                userService.ResetPassword(resetmodel);
+                userService.ChangePassword(changePassword);
             }
 
             ViewBag.SuccessMessage = "The New Password is updated.";
