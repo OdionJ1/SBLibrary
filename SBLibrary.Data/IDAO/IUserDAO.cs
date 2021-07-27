@@ -15,7 +15,7 @@ namespace SBLibrary.Data.IDAO
         void CreateUsers(User user);
 
         User GetUser(string email);
-        void ChangePassword(ChangePassword resetmodel);
+        string ChangePassword(ChangePassword resetmodel);
 
         void ForgotPassword(string EmailID);
     }

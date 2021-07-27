@@ -184,15 +184,23 @@ namespace SBLibrary.Controllers
         [HttpPost]
         public ActionResult ChangePassword(ChangePassword changePassword)
         {
+
+            string message = "";
             if (ModelState.IsValid)
             {
                 //int userId =  (int) Session["userId"];
                 //int userId = 0;
 
-                userService.ChangePassword(changePassword);
+                message = userService.ChangePassword(changePassword);
             }
-
-            ViewBag.SuccessMessage = "The New Password is updated.";
+            if(message.Equals(""))
+            {
+                ViewBag.SuccessMessage = "The New Password is updated.";
+            }else
+            {
+                ViewBag.SuccessMessage = message;
+            }
+            
             return RedirectToAction("Login", "Account");
         }
 

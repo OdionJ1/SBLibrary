@@ -55,19 +55,32 @@ namespace SBLibrary.Data.DAO
                     }
                 }
 
-        public void ChangePassword(ChangePassword resetmodel)
+        public string ChangePassword(ChangePassword resetmodel)
         {
 
             User currectUser = GetUser(resetmodel.EmailID);
+            if(currectUser.Password == resetmodel.CurrentPassword)
+            {
+                currectUser.Password = resetmodel.NewPassword;
+                currectUser.Confirmpwd = resetmodel.NewPassword;
 
-            currectUser.Password = resetmodel.NewPassword;
+                //var user = db.Users.Add(new User {UserID= currectUser.UserID, Email= currectUser.Email, Password= currectUser.Password,
+                //FirstName=currectUser.FirstName, LastName= currectUser.LastName, Mobile= currectUser.Mobile
+                //});
+                //User user = context.Users.Add(currectUser);
+                context.SaveChanges();
 
-            //var user = db.Users.Add(new User {UserID= currectUser.UserID, Email= currectUser.Email, Password= currectUser.Password,
-            //FirstName=currectUser.FirstName, LastName= currectUser.LastName, Mobile= currectUser.Mobile
-            //});
-            context.SaveChanges();
+                context.Entry(currectUser).CurrentValues.SetValues(resetmodel);
+                return "";
+            }
+            else
+            {
+                return "The Current Password did not match with the records..";
+            }
+            
 
-            context.Entry(currectUser).CurrentValues.SetValues(resetmodel);
+            
+            
 
             Console.WriteLine("done ... ");
         }
