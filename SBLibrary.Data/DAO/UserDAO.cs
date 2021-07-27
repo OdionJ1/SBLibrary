@@ -59,7 +59,7 @@ namespace SBLibrary.Data.DAO
         {
 
             User currectUser = GetUser(resetmodel.EmailID);
-            if(currectUser.Password == resetmodel.CurrentPassword)
+            if(currectUser != null && currectUser.Password == resetmodel.CurrentPassword)
             {
                 currectUser.Password = resetmodel.NewPassword;
                 currectUser.Confirmpwd = resetmodel.NewPassword;

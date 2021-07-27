@@ -199,6 +199,7 @@ namespace SBLibrary.Controllers
             }else
             {
                 ViewBag.SuccessMessage = message;
+                return View();
             }
             
             return RedirectToAction("Login", "Account");
