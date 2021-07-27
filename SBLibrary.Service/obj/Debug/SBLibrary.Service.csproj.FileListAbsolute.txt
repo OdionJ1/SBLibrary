@@ -247,3 +247,5 @@ C:\Users\Sathya\2207\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csp
 C:\Users\Sathya\2207\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.csproj.CopyComplete
 C:\Users\Sathya\2207\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.dll
 C:\Users\Sathya\2207\SBLibrary\SBLibrary.Service\obj\Debug\SBLibrary.Service.pdb
+C:\Users\Sathya\2207\SBLibrary\SBLibrary.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sathya\2207\SBLibrary\SBLibrary.Service\bin\Debug\Newtonsoft.Json.xml

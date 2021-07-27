@@ -82,7 +82,7 @@ namespace SBLibrary.Data.DAO
             
             
 
-            Console.WriteLine("done ... ");
+            //Console.WriteLine("done ... ");
         }
 
         public void ForgotPassword(string EmailID)
@@ -105,6 +105,7 @@ namespace SBLibrary.Data.DAO
                     User user = context.Users.Add(getUser);
 
                     context.SaveChanges();
+
 
                     var subject = "Password Reset Request";
 

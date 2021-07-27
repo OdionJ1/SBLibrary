@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SBLibrary.Service.Models.Domain.Item>
+
+
+@{
+    ViewBag.Title = "GoogleBookList";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>Google Book List</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <div>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Preview Link
+        </th>
+        <th></th>
+    </tr>
+
+    </div>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.volumeInfo.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.volumeInfo.authors)
+            </td>
+            <td>
+                <a href="@Html.DisplayFor(modelItem => item.volumeInfo.previewLink)" target="_blank">Book Preview</a>
+
+            </td>
+            <td>
+                @if (item.saleInfo.buyLink != null)
+                {
+                    <a href="@Html.DisplayFor(modelItem => item.saleInfo.buyLink)" target="_blank">Buy</a>
+                }
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to Your Book List", "GetBooks", "Book")
+</div>
