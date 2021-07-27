@@ -1,11 +1,14 @@
-﻿using SBLibrary.Data.DAO;
+﻿using Newtonsoft.Json;
+using SBLibrary.Data.DAO;
 using SBLibrary.Data.IDAO;
 using SBLibrary.Data.Models.Domain;
 using SBLibrary.Data.Models.Repository;
 using SBLibrary.Service.IService;
+using SBLibrary.Service.Models.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -183,6 +186,39 @@ namespace SBLibrary.Service.Service
                 bookDAO.ShareBook(shareBook, context);
             }
 
+        }
+
+        public List<Item> GetGoogleBooks(string searchBookName)
+        {
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://www.googleapis.com/books/v1/volumes?q="+ searchBookName),
+                //Headers =
+                //{
+                //    { "x-rapidapi-key", "06d4f33d43msh7d29cd20fe93f99p133ba0jsnfd378b3d6c84" },
+                //    { "x-rapidapi-host", "google-books.p.rapidapi.com" },
+                //},
+            };
+            using (var response =  client.SendAsync(request))
+            {
+                //response.EnsureSuccessStatusCode();
+                var body = response.Result.Content.ReadAsStringAsync();
+
+                Root googleBooks = new Root();
+                try
+                {
+                    googleBooks = JsonConvert.DeserializeObject<Root>(body.Result);
+                    return googleBooks.items;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
+            }
+            return null;
         }
     }
 }

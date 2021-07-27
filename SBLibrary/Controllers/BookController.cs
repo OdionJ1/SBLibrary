@@ -286,6 +286,26 @@ namespace SBLibrary.Controllers
             bookService.ShareBook(book);
             return RedirectToAction("GetBooks");
         }
+
+        [Authorize(Roles = "User")]
+       // [ValidateAntiForgeryToken]
+        public ActionResult GoogleBooks()
+        {
+            return View();
+        }
+
+
+        [Authorize(Roles = "User")]
+        [HttpPost]
+        // [ValidateAntiForgeryToken]
+        public ActionResult GoogleBooks(String searchBookName)
+        {
+            List<Service.Models.Domain.Item> googleBooks = bookService.GetGoogleBooks(searchBookName);
+            
+            return View("GoogleBookList", googleBooks);
+        }
+
+
     }
 }
 
