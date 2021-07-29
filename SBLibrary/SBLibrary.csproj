@@ -244,9 +244,9 @@
       <Project>{62ff5fac-f8ec-4149-8ee6-d49ea42dba9f}</Project>
       <Name>SBLibrary.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebApi\SBLibrary.WebApi.csproj">
-      <Project>{38B71676-40F6-48B2-A127-A5E8C256CC2F}</Project>
-      <Name>SBLibrary.WebApi</Name>
+    <ProjectReference Include="..\SBLibraryWebApi\SBLibraryWebApi.csproj">
+      <Project>{e746f61d-3ff1-4c12-98ea-b9b59265538f}</Project>
+      <Name>SBLibraryWebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

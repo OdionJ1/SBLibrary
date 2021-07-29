@@ -1,6 +1,6 @@
 ﻿using SBLibrary.InServices.IService;
-using SBLibrary.WebApi;
-using SBLibrary.WebApi.Models;
+using SBLibraryWebApi;
+using SBLibraryWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

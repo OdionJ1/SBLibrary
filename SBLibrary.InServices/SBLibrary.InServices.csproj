@@ -48,13 +48,13 @@
     <Compile Include="Service\GoogleBookService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebApi\SBLibrary.WebApi.csproj">
-      <Project>{38b71676-40f6-48b2-a127-a5e8c256cc2f}</Project>
-      <Name>SBLibrary.WebApi</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\SBLibraryWebApi\SBLibraryWebApi.csproj">
+      <Project>{e746f61d-3ff1-4c12-98ea-b9b59265538f}</Project>
+      <Name>SBLibraryWebApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
