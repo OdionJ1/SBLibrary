@@ -210,6 +210,8 @@
     <Content Include="Views\Category\ConfirmDelete.cshtml" />
     <Content Include="Views\Book\ShareBook.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Book\GoogleBooks.cshtml" />
+    <Content Include="Views\Book\GoogleBookList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -234,9 +236,17 @@
       <Project>{d4960b04-3432-43b3-9efe-b746ec929f72}</Project>
       <Name>SBLibrary.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SBLibrary.InServices\SBLibrary.InServices.csproj">
+      <Project>{221c9ff7-5490-4bd5-8f9d-473e43739675}</Project>
+      <Name>SBLibrary.InServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SBLibrary.Service\SBLibrary.Service.csproj">
       <Project>{62ff5fac-f8ec-4149-8ee6-d49ea42dba9f}</Project>
       <Name>SBLibrary.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApi\SBLibrary.WebApi.csproj">
+      <Project>{38B71676-40F6-48B2-A127-A5E8C256CC2F}</Project>
+      <Name>SBLibrary.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

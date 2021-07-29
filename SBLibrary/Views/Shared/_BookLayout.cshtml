@@ -22,11 +22,12 @@
                 <ul class="nav navbar-nav">
                     @if (User.IsInRole("User"))
                     {
-                    <li>@Html.ActionLink("Books", "GetBooks", "Book")</li>
-                    <li>@Html.ActionLink("Favourite", "GetFavourite", "Book")</li>
-                    <li>@Html.ActionLink("Reading List", "GetReadList", "Book")</li>
-                    <li>@Html.ActionLink("Authors", "GetAuthors", "Author")</li>
-                    <li>@Html.ActionLink("Categories", "GetCategories", "Category")</li>
+                        <li>@Html.ActionLink("Books", "GetBooks", "Book")</li>
+                        <li>@Html.ActionLink("Favourite", "GetFavourite", "Book")</li>
+                        <li>@Html.ActionLink("Reading List", "GetReadList", "Book")</li>
+                        <li>@Html.ActionLink("Authors", "GetAuthors", "Author")</li>
+                        <li>@Html.ActionLink("Categories", "GetCategories", "Category")</li>
+                        <li>@Html.ActionLink("Search Google Books", "GoogleBooks", "Book")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

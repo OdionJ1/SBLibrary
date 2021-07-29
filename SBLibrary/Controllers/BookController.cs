@@ -1,4 +1,6 @@
 ﻿using SBLibrary.Data.Models.Domain;
+using SBLibrary.InServices.IService;
+using SBLibrary.InServices.Service;
 using SBLibrary.Service.IService;
 using SBLibrary.Service.Service;
 using System;
@@ -15,12 +17,14 @@ namespace SBLibrary.Controllers
     {
         IBookService bookService;
         IUserService userService;
+        IGoogleBookService googleBookService;
         Helper helper = new Helper();
 
         public BookController()
         {
             userService = new UserService();
             bookService = new BookService();
+            googleBookService = new GoogleBookService();
         }
 
         [Authorize (Roles = "User")]
@@ -286,6 +290,22 @@ namespace SBLibrary.Controllers
             bookService.ShareBook(book);
             return RedirectToAction("GetBooks");
         }
+
+        [Authorize(Roles = "User")]
+        // [ValidateAntiForgeryToken]
+        public ActionResult GoogleBooks()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpPost]
+        // [ValidateAntiForgeryToken]
+        public ActionResult GoogleBooks(string searchBookName)
+        {
+            return View("GoogleBookList", googleBookService.GetGoogleBooks(searchBookName));
+        }
+
     }
 }
 

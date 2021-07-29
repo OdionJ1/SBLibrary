@@ -1658,3 +1658,9 @@ C:\Users\Sathya\2207\SBLibrary\SBLibrary\obj\Debug\SBLibrary.csproj.CoreCompileI
 C:\Users\Sathya\2207\SBLibrary\SBLibrary\obj\Debug\SBLibrary.csproj.CopyComplete
 C:\Users\Sathya\2207\SBLibrary\SBLibrary\obj\Debug\SBLibrary.dll
 C:\Users\Sathya\2207\SBLibrary\SBLibrary\obj\Debug\SBLibrary.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\SBLibrary.InServices.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\WebApi.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\SBLibrary.InServices.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\WebApi.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\SBLibrary.InServices.dll.config
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\WebApi.dll.config

@@ -1,0 +1,13 @@
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\SBLibrary.InServices.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\SBLibrary.InServices.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\WebApi.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\Newtonsoft.Json.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\WebApi.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\Newtonsoft.Json.xml
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\obj\Debug\SBLibrary.InServices.csproj.AssemblyReference.cache
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\obj\Debug\SBLibrary.InServices.csproj.CoreCompileInputs.cache
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\obj\Debug\SBLibrary.InServices.csproj.CopyComplete
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\obj\Debug\SBLibrary.InServices.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\obj\Debug\SBLibrary.InServices.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\SBLibrary.InServices.dll.config
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary.InServices\bin\Debug\WebApi.dll.config

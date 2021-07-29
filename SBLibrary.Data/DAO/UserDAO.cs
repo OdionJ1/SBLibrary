@@ -77,12 +77,7 @@ namespace SBLibrary.Data.DAO
             {
                 return "The Current Password did not match with the records..";
             }
-            
-
-            
-            
-
-            Console.WriteLine("done ... ");
+            //Console.WriteLine("done ... ");
         }
 
         public void ForgotPassword(string EmailID)
@@ -121,7 +116,6 @@ namespace SBLibrary.Data.DAO
 
         private void SendEmail(string emailAddress, string body, string subject)
         {
-
             var smtp = new SmtpClient
             {
                 Host = "smtp.gmail.com",
@@ -131,11 +125,13 @@ namespace SBLibrary.Data.DAO
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential("sblibrary47@gmail.com", "Reset@123")
             };
+
             using (var message = new MailMessage("sblibrary47@gmail.com", emailAddress)
             {
                 Subject = subject,
                 Body = body
             }
+
             )
 
             {
