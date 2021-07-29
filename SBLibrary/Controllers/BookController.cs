@@ -1,4 +1,5 @@
-﻿using SBLibrary.Data.Models.Domain;
+﻿using Aspose.Pdf;
+using SBLibrary.Data.Models.Domain;
 using SBLibrary.InServices.IService;
 using SBLibrary.InServices.Service;
 using SBLibrary.Service.IService;
@@ -181,11 +182,26 @@ namespace SBLibrary.Controllers
                         string fileExt = Path.GetExtension(file.FileName);
                         string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
                         file.SaveAs(path);
+
+                        if (fileExt.Equals(".epub"))
+                        {
+                            string epubToPdfPath = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + ".pdf");
+                            ConvertEPUBtoPDF(path, epubToPdfPath);
+                        }
                     }
                     return RedirectToAction("GetBooks");
                 }
             }
             return View();
+        }
+
+        public static void ConvertEPUBtoPDF(string epubFilePath, string epubToPdfPath)
+        {
+            EpubLoadOptions option = new EpubLoadOptions();
+            Document pdfDocument = new Document(epubFilePath, option);
+            pdfDocument.Save(epubToPdfPath);
+
+
         }
 
         [Authorize(Roles = "User")]
