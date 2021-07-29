@@ -24,17 +24,35 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @if (item.GoogleBook == true)
+            {
+                <a href="@item.DownloadLink">@item.Title</a>
+            }
+            else
+            {
+                @Html.ActionLink(item.Title, "ReadBook", new { id = item.BookID, name = item.Title }, new { target = "_blank" })
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditBook", new { id = item.BookID }) |
+            @if (item.GoogleBook == false)
+            {
+                @Html.ActionLink("Edit", "EditBook", new { id = item.BookID })
+            } |
             @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
             @*@Html.ActionLink("Delete", "DelBook", new { id = item.BookID })*@
             @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID, controller = "Book" }) |
-            @Html.ActionLink("Download", "Download", new { id = item.BookID, controller = "Book" }) |
+            @if (item.GoogleBook == true)
+            {
+                <a href="@item.DownloadLink">Download</a>
+            }
+            else
+            {
+                @Html.ActionLink("Download", "Download", new { id = item.BookID + "_" + item.Title })
+            } |
+            @Html.ActionLink("ShareBook", "ShareBook", new { id = item.BookID, controller = "Book" }) |
             @if (SBLibrary.Service.Service.BookService.exist(item.BookID, (int)Session["userId"]) == false)
             {
                 @Html.ActionLink("Add to favourite list", "AddToFavList", new { id = item.BookID, controller = "Book" })

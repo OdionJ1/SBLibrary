@@ -37,6 +37,5 @@ namespace SBLibrary.Data.IDAO
         int AddBook(UploadBook book, int userId, SBLibraryContext context);
 
         void ShareBook(ShareBook shareBook, SBLibraryContext context);
-
     }
 }

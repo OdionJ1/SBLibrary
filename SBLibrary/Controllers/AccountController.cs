@@ -225,9 +225,8 @@ namespace SBLibrary.Controllers
         [HttpPost]
         public ActionResult ForgotPassword(string EmailID)
         {
-          
-                userService.ForgotPassword(EmailID);
-                ViewBag.Message = " A Temp password has been sent to your email id.";
+            userService.ForgotPassword(EmailID);
+            ViewBag.Message = " A Temp password has been sent to your email id.";
 
             return View();
         }

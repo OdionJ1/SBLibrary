@@ -65,6 +65,20 @@ namespace SBLibrary.Service.Service
             }
         }
 
+        //Check if the book is already on the list
+        public static bool exist3(string title, int userId)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                var book = context.Books.ToList().Find(y => y.Title == title && y.User.UserID == userId);
+                if (book != null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
         public void AddToReadList(int bookId, int userId)
         {
             if (!exist2(bookId, userId))
@@ -138,7 +152,6 @@ namespace SBLibrary.Service.Service
         {
             using (var context = new SBLibraryContext())
             {
-
                 return bookDAO.EditBook(id, context);
             }
         }
@@ -182,7 +195,59 @@ namespace SBLibrary.Service.Service
             {
                 bookDAO.ShareBook(shareBook, context);
             }
+        }
 
+        public void AddToBookList(int userId, string title, string author, string category, string link)
+        {
+            using (var context = new SBLibraryContext())
+            {
+                //Add google book category to category table
+                Category category1 = new Category()
+                {
+                    CategoryName = category,
+                };
+                categoryDAO.AddCategory(userId, category1, context);
+                context.SaveChanges();
+
+                //Add google book author to author table
+                Author author1 = new Author()
+                {
+                    AuthorName = author
+                };
+                authorDAO.AddAuthor(userId, author1, context);
+                context.SaveChanges();
+
+                Category category2 = context.Categories.ToList().Find(y => y.CategoryName == category && y.User.UserID == userId);
+                Author author2 = context.Authors.ToList().Find(y => y.AuthorName == author && y.User.UserID == userId);
+                User user = context.Users.ToList().Find(y => y.UserID == userId);
+
+                Book newBook = new Book()
+                {
+                    Title = title,
+                    Author = author2,
+                    Category = category2,
+                    User = user,
+                    Date = DateTime.Now,
+                    GoogleBook = true,
+                    DownloadLink = link
+                };
+
+                context.Books.Add(newBook);
+
+                //UploadBook newBook = new UploadBook()
+                //{
+                //    Name = title,
+                //    Author = author2.AuthorId.ToString(),
+                //    Category = category2.CategoryId.ToString()
+                //};
+
+                //int bookId = bookDAO.AddBook(newBook, userId, context);
+
+                //Book book = context.Books.ToList().Find(y => y.BookID == bookId);
+                //book.GoogleBook = true;
+                //book.DownloadLink = link;
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -17,7 +17,10 @@
         <th>
             Author
         </th>
-        <th></th>
+        <th>
+            Category
+        </th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -29,9 +32,21 @@
             @Html.DisplayFor(modelItem => item.volumeInfo.authors[0])
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.DisplayFor(modelItem => item.volumeInfo.categories[0])
+        </td>
+        <td>
+            @if (item.volumeInfo.authors != null && item.volumeInfo.categories != null)
+            {
+                if (SBLibrary.Service.Service.BookService.exist3(item.volumeInfo.title, (int)Session["userId"]) == false)
+                {
+                    @Html.ActionLink("Add to bookList", "AddToBookList", new { title = item.volumeInfo.title, author = item.volumeInfo.authors[0], category = item.volumeInfo.categories[0], link = item.accessInfo.webReaderLink });
+                }
+                else
+                {
+                    <span style="color:deepskyblue ">Added to Book list</span>
+                }
+            } |
+            <a href="@item.volumeInfo.infoLink">More info</a>
         </td>
     </tr>
 }

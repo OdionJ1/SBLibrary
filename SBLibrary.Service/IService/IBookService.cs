@@ -37,5 +37,7 @@ namespace SBLibrary.Service.IService
         int AddBook(UploadBook uploadBook, int UserId);
 
         void ShareBook(ShareBook shareBook);
+
+        void AddToBookList(int userId, string title, string author, string category, string link);
     }
 }

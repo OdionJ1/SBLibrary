@@ -306,6 +306,12 @@ namespace SBLibrary.Controllers
             return View("GoogleBookList", googleBookService.GetGoogleBooks(searchBookName));
         }
 
+        [Authorize(Roles = "User")]
+        public ActionResult AddToBookList(string title, string author, string category, string link)
+        {
+            bookService.AddToBookList((int)Session["userId"], title, author, category, link);
+            return RedirectToAction("GetBooks");
+        }
     }
 }
 
