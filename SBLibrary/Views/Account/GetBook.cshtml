@@ -4,42 +4,18 @@
     ViewBag.Title = "GetBook";
 }
 
-<h2>GetBook</h2>
+<h2>Book Details</h2>
 
 <div>
     <h4>Book</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.UserID)
+            @Html.DisplayNameFor(model => model.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.UserID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
+            @Html.DisplayFor(model => model.Title)
         </dd>
 
         <dt>
@@ -50,9 +26,27 @@
             @Html.DisplayFor(model => model.Date)
         </dd>
 
+        <dt>
+            Author
+        </dt>
+
+        <dd>
+            @Html.ActionLink((string)ViewBag.AuthorName, "GetBooks", new { authorId = ViewBag.AuthorId, Controller = "Author" })
+        </dd>
+
+        <dt>
+            Category
+        </dt>
+
+        <dd>
+            @Html.ActionLink((string)ViewBag.CategoryName, "GetBooks", new { categoryId = ViewBag.CategoryId, Controller = "Category" })
+        </dd>
+
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BookID }) |
-    @Html.ActionLink("Back to List", "Getbooks", "Book")
+    @Html.ActionLink("Edit", "EditBook", new { id = Model.BookID, controller = "Book" }) |
+    @Html.ActionLink("Delete", "DelBook", new { id = Model.BookID, controller = "Book" }) |
+    @Html.ActionLink("Back to List", "GetBooks", new { id = Model.BookID, controller = "Book" })
 </p>

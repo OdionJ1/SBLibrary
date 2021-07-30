@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.PDF, Version=21.7.0.0, Culture=neutral, PublicKeyToken=f0262d67fe233d63, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.21.7.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -133,11 +136,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\Helper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +153,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img1.jpg" />
+    <Content Include="Content\img2.jpg" />
+    <Content Include="Content\img3.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -183,10 +194,33 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\GetBook.cshtml" />
     <Content Include="Views\Book\EditBook.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Book\DelBook.cshtml" />
+    <Content Include="Views\Book\Search.cshtml" />
+    <Content Include="Views\Book\GetFavourite.cshtml" />
+    <Content Include="Views\Book\GetReadList.cshtml" />
+    <Content Include="Views\Book\AddBook.cshtml" />
+    <Content Include="Views\Category\AddCategory.cshtml" />
+    <Content Include="Views\Author\AddAuthor.cshtml" />
+    <Content Include="Views\Author\GetAuthors.cshtml" />
+    <Content Include="Views\Category\GetCategories.cshtml" />
+    <Content Include="Views\Author\GetBooks.cshtml" />
+    <Content Include="Views\Admin\AdminGetUsers.cshtml" />
+    <Content Include="Views\Admin\AdminDelUser.cshtml" />
+    <Content Include="Views\Category\GetBooks.cshtml" />
+    <Content Include="Views\Author\EditAuthor.cshtml" />
+    <Content Include="Views\Category\EditCategory.cshtml" />
+    <Content Include="Views\Author\ConfirmDelete.cshtml" />
+    <Content Include="Views\Category\ConfirmDelete.cshtml" />
+    <Content Include="Views\Book\ShareBook.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Book\GoogleBooks.cshtml" />
+    <Content Include="Views\Book\GoogleBookList.cshtml" />
+    <Content Include="Views\Book\BuyBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -206,9 +240,17 @@
       <Project>{d4960b04-3432-43b3-9efe-b746ec929f72}</Project>
       <Name>SBLibrary.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SBLibrary.InServices\SBLibrary.InServices.csproj">
+      <Project>{221c9ff7-5490-4bd5-8f9d-473e43739675}</Project>
+      <Name>SBLibrary.InServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SBLibrary.Service\SBLibrary.Service.csproj">
       <Project>{62ff5fac-f8ec-4149-8ee6-d49ea42dba9f}</Project>
       <Name>SBLibrary.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBLibraryWebApi\SBLibraryWebApi.csproj">
+      <Project>{e746f61d-3ff1-4c12-98ea-b9b59265538f}</Project>
+      <Name>SBLibraryWebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

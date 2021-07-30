@@ -20,6 +20,7 @@ namespace SBLibrary.Service.Service
 
         public void CreateUser(User user)
         {
+            
             userDAO.CreateUsers(user);
         }
 
@@ -31,6 +32,15 @@ namespace SBLibrary.Service.Service
         public User GetUser(string email)
         {
             return userDAO.GetUser(email);
+        }
+        public string ChangePassword(ChangePassword resetmodel)
+        {
+            return userDAO.ChangePassword(resetmodel);
+        }
+
+        public void ForgotPassword(string EmailID)
+        {
+            userDAO.ForgotPassword(EmailID);
         }
     }
 }

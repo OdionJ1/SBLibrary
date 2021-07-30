@@ -1,0 +1,34 @@
+﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Category>
+
+@{
+    ViewBag.Title = "GetCategories";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>Categories</h2>
+
+<p>
+    @Html.ActionLink("Add New Category", "AddCategory", "Category")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.CategoryName)*@
+            @Html.ActionLink(item.CategoryName, "GetBooks", new { categoryId = item.CategoryId, Controller = "Category" })
+        </td>
+        <td>
+            @Html.ActionLink("Rename", "EditCategory", new { id = item.CategoryId }) |
+            @Html.ActionLink("Delete Category", "ConfirmDelete", new { categoryId = item.CategoryId }, new { @style = "color: indianred" })
+        </td>
+    </tr>
+}
+
+</table>

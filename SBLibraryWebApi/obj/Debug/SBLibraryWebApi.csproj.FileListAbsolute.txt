@@ -1,0 +1,36 @@
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.dll.config
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.AssemblyReference.cache
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.CoreCompileInputs.cache
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.CopyComplete
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.pdb
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.dll.config
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.dll
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.pdb
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.AssemblyReference.cache
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.CopyComplete
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.dll
+C:\Users\Sathya\29074\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.pdb
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.dll.config
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.dll
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\SBLibraryWebApi.pdb
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.AssemblyReference.cache
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.csproj.CopyComplete
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.dll
+C:\Users\Sathya\29075\SBLibrary\SBLibraryWebApi\obj\Debug\SBLibraryWebApi.pdb

@@ -11,21 +11,31 @@ namespace SBLibrary.Data.IDAO
     public interface IBookDAO
     {
         IList<Book> GetBooks(SBLibraryContext context);
+        IList<Book> GetFavouriteBooks(int userId, SBLibraryContext context);
+
+        IList<Book> GetReadList(int userId, SBLibraryContext context);
         Book GetBook(int id, SBLibraryContext context);
         IList<Book> GetBooks(int id, SBLibraryContext context);
 
         Book EditBook(int id, SBLibraryContext context);
-        void EditBook(Book edit);
+        int EditBook(Book book);
+
+        void AddToFavList(int bookId, int userId, SBLibraryContext context);
+
+        void RemoveFromFavList(int bookId, int userId, SBLibraryContext context);
+
+        void RemoveFromReadList(int bookId, int userId, SBLibraryContext context);
+
+        void AddToReadList(int bookId, int userId, SBLibraryContext context);
 
         //Delete
-        //Book DelBook(Book del, SBLibraryContext context);
-        //IList<Book> DelBooks(int id, SBLibraryContext context);
+        //Book DelBook(int id, SBLibraryContext context);
+        void DelBook(int id, SBLibraryContext context);
 
+        IList<Book> Search(string searchBy, int userId, string search, SBLibraryContext context);
 
-        //IList<Book> DelBooks(int id, SBLibraryContext context);
+        int AddBook(UploadBook book, int userId, SBLibraryContext context);
 
-        //void AddBook(Book book, SBLibraryContext context);
-        //void AddBook(Book book,  Author author, SBLibraryContext context);
-        //void AddBook(Book book, Category categories, SBLibraryContext context);
+        void ShareBook(ShareBook shareBook, SBLibraryContext context);
     }
 }

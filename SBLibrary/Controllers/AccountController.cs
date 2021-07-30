@@ -1,9 +1,12 @@
 ﻿using SBLibrary.Data.Models.Domain;
+using SBLibrary.Data.Models.Repository;
 using SBLibrary.Service.IService;
 using SBLibrary.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -15,12 +18,16 @@ namespace SBLibrary.Controllers
         IUserService userService;
         LoginService loginService;
         IBookService bookService;
+        IAuthorService authorService;
+        ICategoryService categoryService;
 
         public AccountController()
         {
             userService = new UserService();
             loginService = new LoginService();
             bookService = new BookService();
+            authorService = new AuthorService();
+            categoryService = new CategoryService();
         }
         // GET: Account
         public ActionResult Index()
@@ -99,8 +106,6 @@ namespace SBLibrary.Controllers
                 return View();
             }
         }
-        
-
         public ActionResult Login()
         {
             return View();
@@ -108,20 +113,31 @@ namespace SBLibrary.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Login(Login loginmodel)
         {
-            if (ModelState.IsValid)
+            var user = loginService.UserAuthenticated(loginmodel);
+            //Session["userId"] = user.UserID;
+            if (user != null)
             {
-                var user = userService.GetUser(loginmodel.Email);
-                if (loginService.UserAuthenticated(loginmodel)) 
+                var Ticket = new FormsAuthenticationTicket(loginmodel.Email, true, 100);
+                string Encrypt = FormsAuthentication.Encrypt(Ticket);
+                var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, Encrypt);
+                cookie.Expires = DateTime.Now.AddHours(100);
+                cookie.HttpOnly = true;
+                Response.Cookies.Add(cookie);
+                if (user.RoleID == 1)
                 {
-                    Session["Email"] = loginmodel.Email;
-                    return RedirectToAction("GetBooks", "Book", new { id = user.UserID }); 
+                    //return RedirectToAction("GetBooks", "Book", new { id = user.UserID });
+                    return RedirectToAction("GetBooks", "Book");
                 }
-                
-                return RedirectToAction("Login");
-            }
+                else
+                {
+                    //return RedirectToAction("AdminGetUsers", "Admin", new { id = user.UserID });
+                    return RedirectToAction("AdminGetUsers", "Admin");
+                }
 
+            }
             return View();
         }
 
@@ -138,13 +154,19 @@ namespace SBLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                userService.CreateUser(usermodel);
-                //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
-                return RedirectToAction("Login");
+                var user = userService.GetUser(usermodel.Email);
+                if (user == null)
+                {
+                    userService.CreateUser(usermodel);
+                    //return RedirectToAction("GetBooks", "Book", new { id = "UserID" });
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ViewBag.message2 = "There is already a registered user with that email";
+                }
+                
             }
-
-
-
             return View();
         }
 
@@ -154,16 +176,62 @@ namespace SBLibrary.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePassword changePassword)
+        {
+
+            string message = "";
+            if (ModelState.IsValid)
+            {
+                //int userId =  (int) Session["userId"];
+                //int userId = 0;
+
+                message = userService.ChangePassword(changePassword);
+            }
+            if(message.Equals(""))
+            {
+                ViewBag.SuccessMessage = "The New Password is updated.";
+            }else
+            {
+                ViewBag.SuccessMessage = message;
+                return View();
+            }
+            
+            return RedirectToAction("Login", "Account");
+        }
+
         public ActionResult GetBook(int id)
         {
-            return View(bookService.GetBook(id));
+            var book = bookService.GetBook(id);
+            ViewBag.AuthorName = book.Author.AuthorName;
+            ViewBag.AuthorId = book.Author.AuthorId;
+            ViewBag.CategoryName = book.Category.CategoryName;
+            ViewBag.CategoryId = book.Category.CategoryId;
+
+            return View(book);
         }
-        public ActionResult GetBooks(int id)
+
+        public ActionResult ForgotPassword()
         {
-            return View(bookService.GetBooks(id));
+            return View();
         }
 
+       // [Authorize(Roles = "User")]
+        [HttpPost]
+        public ActionResult ForgotPassword(string EmailID)
+        {
+            userService.ForgotPassword(EmailID);
+            ViewBag.Message = " A Temp password has been sent to your email id.";
 
+            return View();
+        }
 
     }
+
 }
+

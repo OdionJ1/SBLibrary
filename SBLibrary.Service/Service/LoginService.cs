@@ -1,4 +1,5 @@
 ﻿using SBLibrary.Data.Models.Domain;
+using SBLibrary.Data.Models.Repository;
 using SBLibrary.Service.IService;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,16 @@ namespace SBLibrary.Service.Service
         {
             userService = new UserService();
         }
-        public bool UserAuthenticated(Login loginData)
+        public User UserAuthenticated(Login loginData)
         {
-            User UserData = userService.GetUser(loginData.Email);
-            return UserData.Password == loginData.Password;
+            
+            using(SBLibraryContext db = new SBLibraryContext())
+            {
+                var user = db.Users.Where(a => a.Email == loginData.Email && a.Password == loginData.Password).FirstOrDefault();
+                return user;
+            }
+            //User UserData = userService.GetUser(loginData.Email);
+            //return UserData.Password == loginData.Password;
             
         }
     }

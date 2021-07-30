@@ -8,21 +8,41 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <ul class="navbar-brand">Sky Book Library</ul>
-                @*@Html.ActionLink("Sky Book Library", "", "", new { area = "" }, new { @class = "navbar-brand" })*@
+                @Html.ActionLink("Sky Book Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Register", "Register", "Account")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("User"))
+                        {
+                            <li>@Html.ActionLink("BookList", "GetBooks", "Book")</li>
+                            @*<li>@Html.ActionLink("Logout", "Logout", "Account")</li>*@
+                        }
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <ul class="navbar-brand">@User.Identity.Name</ul>
+                            </li>
+                            <li>@Html.ActionLink("Manage User", "AdminGetUsers", "Admin")</li>
+                            @*<li>@Html.ActionLink("Logout", "Logout", "Account")</li>*@
+                        }
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
                 </ul>
             </div>
         </div>

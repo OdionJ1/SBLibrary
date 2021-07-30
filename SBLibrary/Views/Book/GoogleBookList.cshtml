@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SBLibraryWebApi.Models.Item>
+
+@{
+    ViewBag.Title = "GoogleBookList";
+}
+
+<h2>Google BookList</h2>
+
+<p>
+    @Html.ActionLink("New search", "GoogleBooks", "Book")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Category
+        </th>
+        <th>Actions</th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.volumeInfo.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volumeInfo.authors[0])
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volumeInfo.categories[0])
+        </td>
+        <td>
+            @if (item.volumeInfo.authors != null && item.volumeInfo.categories != null)
+            {
+                if (SBLibrary.Service.Service.BookService.exist3(item.volumeInfo.title, (int)Session["userId"]) == false)
+                {
+                    @Html.ActionLink("Buy", "BuyBook", new { title = item.volumeInfo.title, author = item.volumeInfo.authors[0], category = item.volumeInfo.categories[0], link = item.accessInfo.webReaderLink });
+                }
+                else
+                {
+                    <span style="color:deepskyblue ">Added to Book list</span>
+                }
+            } |
+            <a href="@item.volumeInfo.infoLink" target="_tab">More info</a>
+        </td>
+    </tr>
+}
+
+</table>

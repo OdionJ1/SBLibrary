@@ -16,13 +16,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <ul class="navbar-brand">Sky Book Library</ul>
+                @Html.ActionLink("Sky Book Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Book", "GetBooks", "Book")</li>
-                    <li>@Html.ActionLink("Favourite", "index", "Favourite")</li>
-                    <li>@Html.ActionLink("Reading List", "index", "Reading List")</li>
+                    @if (User.IsInRole("User"))
+                    {
+                        <li>@Html.ActionLink("Books", "GetBooks", "Book")</li>
+                        <li>@Html.ActionLink("Favourite", "GetFavourite", "Book")</li>
+                        <li>@Html.ActionLink("Reading List", "GetReadList", "Book")</li>
+                        <li>@Html.ActionLink("Authors", "GetAuthors", "Author")</li>
+                        <li>@Html.ActionLink("Categories", "GetCategories", "Category")</li>
+                        <li>@Html.ActionLink("Search Google Books", "GoogleBooks", "Book")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

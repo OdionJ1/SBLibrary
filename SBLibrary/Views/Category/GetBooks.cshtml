@@ -1,0 +1,80 @@
+﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Book>
+
+@{
+    ViewBag.Title = "GetBooks";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>@ViewBag.CategoryName books</h2>
+
+<p>
+    @Html.ActionLink("Upload book", "AddBook", new { controller = "Book" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @if (item.GoogleBook == true)
+            {
+                <a href="@item.DownloadLink">@item.Title</a>
+            }
+            else
+            {
+                @Html.ActionLink(item.Title, "ReadBook", new { id = item.BookID, name = item.Title }, new { target = "_blank" })
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @if (item.GoogleBook == false)
+            {
+                @Html.ActionLink("Edit", "EditBook", new { id = item.BookID })
+            } |
+            @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
+            @*@Html.ActionLink("Delete", "DelBook", new { id = item.BookID })*@
+            @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID, controller = "Book" }) |
+            @if (item.GoogleBook == true)
+            {
+                <a href="@item.DownloadLink">Download</a>
+            }
+            else
+            {
+                @Html.ActionLink("Download", "Download", new { id = item.BookID + "_" + item.Title })
+            } |
+            @Html.ActionLink("ShareBook", "ShareBook", new { id = item.BookID, controller = "Book" }) |
+            @if (SBLibrary.Service.Service.BookService.exist(item.BookID, (int)Session["userId"]) == false)
+            {
+                @Html.ActionLink("Add to favourite list", "AddToFavList", new { id = item.BookID, controller = "Book" })
+            }
+            else
+            {
+                <span style="color:deepskyblue ">Added to Favorite list</span>
+            } |
+
+            @if (SBLibrary.Service.Service.BookService.exist2(item.BookID, (int)Session["userId"]) == false)
+            {
+                @Html.ActionLink("Add to Reading list", "AddToReadList", new { id = item.BookID, controller = "Book" })
+            }
+            else
+            {
+                <span style="color:deepskyblue ">Added to Reading list</span>
+            }
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Delete Category", "ConfirmDelete", new { categoryId = ViewBag.CategoryId }, new { @style = "color: indianred" })
+</div>

@@ -1,12 +1,27 @@
 ﻿@model IEnumerable<SBLibrary.Data.Models.Domain.Book>
 
 @{ ViewBag.Title = "GetBooks";
-   Layout = "~/Views/Shared/_BookLayout.cshtml"; 
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
 }
-<h2>GetBooks</h2>
+<h2>Book List</h2>
+
+<p class="navbar-right">
+    <b>
+        @Html.ActionLink("Upload Book", "AddBook", "Book")
+    </b>
+</p>
+<br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*generate a form tag using a get request, so for that we need
+        begainform tag, to get an open and close form use using (Html.*@
+    @using (Html.BeginForm("Search", "Book", FormMethod.Get))
+    {
+        <b>Search By:</b> @Html.RadioButton("searchBy", "Title", true) <text>Title</text>
+        @Html.RadioButton("searchBy", "AuthorName") <text>Author</text><br />
+        <p style="color: red; font-size:small">Note: Search is case sensitive</p>
+        @Html.TextBox("Search") <input type="submit" value="Search" />
+    }
 </p>
 <table class="table">
     <tr>
@@ -16,24 +31,60 @@
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @if (item.GoogleBook == true)
+                {
+                    <a href="@item.DownloadLink">@item.Title</a>
+                }
+                else
+                {
+                    @Html.ActionLink(item.Title, "ReadBook", new { id = item.BookID, name = item.Title }, new { target = "_blank" })
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BookID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BookID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BookID })
+                @if (item.GoogleBook == false)
+                {
+                    @Html.ActionLink("Edit", "EditBook", new { id = item.BookID })
+                } |
+                @Html.ActionLink("Details", "GetBook", new { id = item.BookID, controller = "Account" }) |
+                @*@Html.ActionLink("Delete", "DelBook", new { id = item.BookID })*@
+                @Html.ActionLink("Delete", "ConfirmDel", new { id = item.BookID }) |
+                @if (item.GoogleBook == true)
+                {
+                    <a href="@item.DownloadLink">Download</a>
+                }
+                else
+                {
+                    @Html.ActionLink("Download", "Download", new { id = item.BookID + "_" + item.Title })
+                } |
+                @Html.ActionLink("ShareBook", "ShareBook", new { id = item.BookID }) |
+                @if (SBLibrary.Service.Service.BookService.exist(item.BookID, (int)Session["userId"]) == false)
+                {
+                    @Html.ActionLink("Add to favourite list", "AddToFavList", new { id = item.BookID })
+                }
+                else
+                {
+                    <span style="color:deepskyblue ">Added to Favorite list</span>
+                } |
+
+                @if (SBLibrary.Service.Service.BookService.exist2(item.BookID, (int)Session["userId"]) == false)
+                {
+                    @Html.ActionLink("Add to Reading list", "AddToReadList", new { id = item.BookID })
+                }
+                else
+                {
+                    <span style="color:deepskyblue ">Added to Reading list</span>
+                }
             </td>
         </tr>
     }
-
 </table>

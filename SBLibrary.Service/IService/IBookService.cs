@@ -1,5 +1,4 @@
 ﻿using SBLibrary.Data.Models.Domain;
-using SBLibrary.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +9,9 @@ namespace SBLibrary.Service.IService
 {
     public interface IBookService
     {
+        IList<Book> GetFavouriteBooks(int userId);
+
+        IList<Book> GetReadList(int userId);
         IList<Book> GetBooks();
 
         //book service interface to get books
@@ -19,13 +21,23 @@ namespace SBLibrary.Service.IService
         //edit book
         Book EditBook(int id);
 
-        void EditBook(Book edit);
+        int EditBook(Book book);
+
+        void AddToFavList(int bookId, int userId);
+        void RemoveFromFavList(int bookId, int userId);
+        void RemoveFromReadList(int bookId, int userId);
+        void AddToReadList(int bookId, int userId);
 
         //delete
         //Book DelBook(int id);
-        //void DelBook(Book edit);
-        //Book DelBook(Book del);
+        void DelBook(int id);
 
-        //void AddMusic(UploadBook uploadBook, string UserID);
+        IList<Book> Search(string searchBy, int userId, string search);
+
+        int AddBook(UploadBook uploadBook, int UserId);
+
+        void ShareBook(ShareBook shareBook);
+
+        void AddToBookList(int userId, string title, string author, string category, string link);
     }
 }
