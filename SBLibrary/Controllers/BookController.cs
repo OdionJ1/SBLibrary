@@ -178,18 +178,29 @@ namespace SBLibrary.Controllers
                     if (file.ContentLength > 0)
                     {
                         int bookId = bookService.AddBook(book, (int)Session["userId"]);
-
                         string fileExt = Path.GetExtension(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
-                        file.SaveAs(path);
 
-                        if (fileExt.Equals(".epub"))
+                        if (fileExt.Equals(".epub") || fileExt.Equals(".pdf"))
                         {
-                            string epubToPdfPath = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + ".pdf");
-                            ConvertEPUBtoPDF(path, epubToPdfPath);
+                            string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
+                            file.SaveAs(path);
+
+                            if (fileExt.Equals(".epub"))
+                            {
+                                string epubToPdfPath = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + ".pdf");
+                                ConvertEPUBtoPDF(path, epubToPdfPath);
+                            }
+
+                            return RedirectToAction("GetBooks");
+                        }
+                        else
+                        {
+                            ViewBag.categoryList = helper.GetCategoryDropDown((int)Session["userId"]);
+                            ViewBag.authorList = helper.GetAuthorDropDown((int)Session["userId"]);
+                            ViewBag.Message = "You would be able to upload only pdf or epub file";
+                            return View("AddBook");
                         }
                     }
-                    return RedirectToAction("GetBooks");
                 }
             }
             return View();
