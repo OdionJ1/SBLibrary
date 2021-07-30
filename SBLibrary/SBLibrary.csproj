@@ -145,6 +145,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PaymentModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -215,10 +216,10 @@
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Book\GoogleBooks.cshtml" />
     <Content Include="Views\Book\GoogleBookList.cshtml" />
+    <Content Include="Views\Book\BuyBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>

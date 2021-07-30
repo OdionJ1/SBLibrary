@@ -2,6 +2,7 @@
 using SBLibrary.Data.Models.Domain;
 using SBLibrary.InServices.IService;
 using SBLibrary.InServices.Service;
+using SBLibrary.Models;
 using SBLibrary.Service.IService;
 using SBLibrary.Service.Service;
 using System;
@@ -177,11 +178,12 @@ namespace SBLibrary.Controllers
                 {
                     if (file.ContentLength > 0)
                     {
-                        int bookId = bookService.AddBook(book, (int)Session["userId"]);
+                        
                         string fileExt = Path.GetExtension(file.FileName);
 
                         if (fileExt.Equals(".epub") || fileExt.Equals(".pdf"))
                         {
+                            int bookId = bookService.AddBook(book, (int)Session["userId"]);
                             string path = Path.Combine(Server.MapPath("~/UploadedFiles"), bookId + "_" + book.Name + fileExt);
                             file.SaveAs(path);
 
@@ -197,10 +199,16 @@ namespace SBLibrary.Controllers
                         {
                             ViewBag.categoryList = helper.GetCategoryDropDown((int)Session["userId"]);
                             ViewBag.authorList = helper.GetAuthorDropDown((int)Session["userId"]);
-                            ViewBag.Message = "You would be able to upload only pdf or epub file";
+                            ViewBag.Message = "You can only upload pdf or epub files";
                             return View("AddBook");
                         }
                     }
+                } else
+                {
+                    ViewBag.categoryList = helper.GetCategoryDropDown((int)Session["userId"]);
+                    ViewBag.authorList = helper.GetAuthorDropDown((int)Session["userId"]);
+                    ViewBag.Message = "You have not selected a file";
+                    return View("AddBook");
                 }
             }
             return View();
@@ -211,8 +219,6 @@ namespace SBLibrary.Controllers
             EpubLoadOptions option = new EpubLoadOptions();
             Document pdfDocument = new Document(epubFilePath, option);
             pdfDocument.Save(epubToPdfPath);
-
-
         }
 
         [Authorize(Roles = "User")]
@@ -333,11 +339,43 @@ namespace SBLibrary.Controllers
             return View("GoogleBookList", googleBookService.GetGoogleBooks(searchBookName));
         }
 
+        //[Authorize(Roles = "User")]
+        //public ActionResult AddToBookList(string title, string author, string category, string link)
+        //{
+        //    bookService.AddToBookList((int)Session["userId"], title, author, category, link);
+        //    return RedirectToAction("GetBooks");
+        //}
+
         [Authorize(Roles = "User")]
-        public ActionResult AddToBookList(string title, string author, string category, string link)
+        public ActionResult BuyBook(string title, string author, string category, string link)
         {
-            bookService.AddToBookList((int)Session["userId"], title, author, category, link);
-            return RedirectToAction("GetBooks");
+            Session["title"] = title;
+            Session["author"] = author;
+            Session["category"] = category;
+            Session["link"] = link;
+            return View();
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BuyBook(PaymentModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    bookService.AddToBookList((int)Session["userId"], (string)Session["title"], (string)Session["author"], (string)Session["category"], (string)Session["link"]);
+                    ViewBag.success = "Payment successful. Book successfully added to booklist";
+                    return RedirectToAction("GetBooks");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            return View();
         }
     }
 }

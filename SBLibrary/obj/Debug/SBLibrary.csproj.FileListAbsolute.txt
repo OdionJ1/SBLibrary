@@ -1866,3 +1866,5 @@ C:\Users\Sathya\29075\SBLibrary\SBLibrary\obj\Debug\SBLibrary.csproj.CoreCompile
 C:\Users\Sathya\29075\SBLibrary\SBLibrary\obj\Debug\SBLibrary.csproj.CopyComplete
 C:\Users\Sathya\29075\SBLibrary\SBLibrary\obj\Debug\SBLibrary.dll
 C:\Users\Sathya\29075\SBLibrary\SBLibrary\obj\Debug\SBLibrary.pdb
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\Aspose.PDF.dll
+C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\bin\Aspose.PDF.xml
