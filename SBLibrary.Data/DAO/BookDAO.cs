@@ -122,19 +122,20 @@ namespace SBLibrary.Data.DAO
 
         public void DelBook(int id, SBLibraryContext context)
         {
-
-            Book book = context.Books.Find(id);
-
-            context.Books.Remove(book);
-            if (book.GoogleBook == false)
+            try
             {
-                //C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\UploadedFiles\
-                var FileVirtualPath = "~/UploadedFiles/" + id + "_" + book.Title + ".pdf";
-
-                File.Delete(FileVirtualPath);
+                Book book = context.Books.Find(id);
+               
+                context.Books.Remove(book);
+                context.SaveChanges();
             }
-            context.SaveChanges();
+            catch
+            {
+                throw;
+            }
+
         }
+
 
         public Book EditBook(int id, SBLibraryContext context)
         {

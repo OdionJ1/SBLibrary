@@ -166,7 +166,6 @@ namespace SBLibrary.Service.Service
             using (var context = new SBLibraryContext())
             {
                 bookDAO.DelBook(id, context);
-
             }
         }
 

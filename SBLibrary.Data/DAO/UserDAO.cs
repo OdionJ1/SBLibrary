@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Security;
+using System.Data.Entity;
 
 namespace SBLibrary.Data.DAO
 {
@@ -83,8 +84,8 @@ namespace SBLibrary.Data.DAO
         public void ForgotPassword(string EmailID)
         {
             string resetCode = Guid.NewGuid().ToString();
-           // var verifyUrl = "/Account/ResetPassword/" + resetCode;
-           // var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
+            // var verifyUrl = "/Account/ResetPassword/" + resetCode;
+            // var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
             using (var context = new SBLibraryContext())
             {
                 var getUser = (from s in context.Users where s.Email == EmailID select s).FirstOrDefault();
@@ -97,7 +98,10 @@ namespace SBLibrary.Data.DAO
 
                     context.Configuration.ValidateOnSaveEnabled = false;
 
-                    User user = context.Users.Add(getUser);
+                    //User user = context.Users.Add(getUser);
+
+                    context.Entry(getUser).State = EntityState.Modified;  //use user.data.entity for enter
+
 
                     context.SaveChanges();
 
