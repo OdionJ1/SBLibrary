@@ -10,6 +10,7 @@ namespace SBLibrary.InServices.Models
     public class GoogleBookSearch
     {
         [Display(Name = "Search Book Title")]
+        [Required(ErrorMessage = "Enter book title")]
         public string SearchBookName { get; set; }
     }
 }

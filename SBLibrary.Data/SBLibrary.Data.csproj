@@ -67,11 +67,11 @@
     <Compile Include="Models\Domain\Author.cs" />
     <Compile Include="Models\Domain\Book.cs" />
     <Compile Include="Models\Domain\Category.cs" />
+    <Compile Include="Models\Domain\ChangePassword.cs" />
     <Compile Include="Models\Domain\Favorite.cs" />
     <Compile Include="Models\Domain\ForgotPassword.cs" />
     <Compile Include="Models\Domain\Login.cs" />
     <Compile Include="Models\Domain\ReadList.cs" />
-    <Compile Include="Models\Domain\ChangePassword.cs" />
     <Compile Include="Models\Domain\ShareBook.cs" />
     <Compile Include="Models\Domain\UploadBook.cs" />
     <Compile Include="Models\Domain\User.cs" />

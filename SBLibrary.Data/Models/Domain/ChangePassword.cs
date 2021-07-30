@@ -18,7 +18,7 @@ namespace SBLibrary.Data.Models.Domain
         public string EmailID { get; set; }
 
 
-        
+
         [Required, DataType(DataType.Password), Display(Name = "Current Password")]
         [StringLength(100, ErrorMessage = "Password \"{0}\" must have {2} character", MinimumLength = 8)]
         [RegularExpression(@"^([a-zA-Z0-9@*#]{8,15})$", ErrorMessage = "Password must contain: Minimum 8 characters atleast 1 UpperCase Alphabet, 1 LowerCase      Alphabet, 1 Number and 1 Special Character")]
@@ -39,7 +39,5 @@ namespace SBLibrary.Data.Models.Domain
 
 
         public virtual User User { get; set; }
-
-        //public System.DateTime ResetPasswordTime { get; set; }
     }
 }

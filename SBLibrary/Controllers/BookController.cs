@@ -336,7 +336,14 @@ namespace SBLibrary.Controllers
         // [ValidateAntiForgeryToken]
         public ActionResult GoogleBooks(string searchBookName)
         {
-            return View("GoogleBookList", googleBookService.GetGoogleBooks(searchBookName));
+            if (ModelState.IsValid)
+            {
+                return View("GoogleBookList", googleBookService.GetGoogleBooks(searchBookName));
+            }
+            else
+            {
+                return View();
+            }
         }
 
         //[Authorize(Roles = "User")]

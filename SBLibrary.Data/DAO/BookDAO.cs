@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace SBLibrary.Data.DAO
 {
@@ -121,17 +122,18 @@ namespace SBLibrary.Data.DAO
 
         public void DelBook(int id, SBLibraryContext context)
         {
-            try
-            {
-                Book book = context.Books.Find(id);
-                context.Books.Remove(book);
-                context.SaveChanges();
-            }
-            catch
-            {
-                throw;
-            }
 
+            Book book = context.Books.Find(id);
+
+            context.Books.Remove(book);
+            if (book.GoogleBook == false)
+            {
+                //C:\Users\odion\Desktop\My Projects\SBLibrary\SBLibrary\UploadedFiles\
+                var FileVirtualPath = "~/UploadedFiles/" + id + "_" + book.Title + ".pdf";
+
+                File.Delete(FileVirtualPath);
+            }
+            context.SaveChanges();
         }
 
         public Book EditBook(int id, SBLibraryContext context)
